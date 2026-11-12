@@ -1136,10 +1136,10 @@
    {
     "company": "Uponor",
     "market": "DE, ES, DK",
-    "period": "pilot phase",
+    "period": "pilots, then launch in at least one market",
     "outcome": "unproven",
     "evidence": "documented",
-    "note": "Sensor-based heating optimisation piloted in multi-family, mixed and commercial buildings; pilots started at 12-15% heating savings. Savings-share model designed with no customer CAPEX. Market outcome of the model to be confirmed.",
+    "note": "Sensor-based heating optimisation piloted in multi-family, mixed and commercial buildings, with pilots starting at 12-15% heating savings. A savings-share model with no customer CAPEX was designed and launched in at least one market. Results to be added.",
     "source_ids": [
      "s1"
     ]

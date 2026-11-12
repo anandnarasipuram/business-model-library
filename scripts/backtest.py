@@ -13,7 +13,7 @@ from engine.match import rank
 PROFILE = {
     "segment": "mfh",
     "domain": "heating",
-    "max_customer_capex": "none",
+    "max_customer_capex": "high",
     "provider_can_finance": True,
     "savings_measurable": True,
     "has_installer_network": True,
@@ -25,7 +25,7 @@ PROFILE = {
 def main():
     entries = load_entries(include_private=True)
     result = rank(PROFILE, entries)
-    print("Profile: heating in multi-family buildings, zero upfront for customer, provider can finance,")
+    print("Profile: heating in multi-family buildings, landlords can buy and own, provider can finance,")
     print("         savings measurable, installer network and own hardware available\n")
     for i, r in enumerate(result["ranked"], 1):
         print(f"{i:2d}. {r['score']:3d}  {r['name']}  [{r['outcome']}, {r['evidence']}]")
@@ -44,15 +44,20 @@ def main():
             failures.append("rental does not rank below all non-failed models")
         if not any("Failed case" in w for w in row["warnings"]):
             failures.append("rental carries no failed-case warning")
+    if "ihc-hardware-plus-saas" in ranked and "ihc-rental" in ranked:
+        if ranked["ihc-hardware-plus-saas"][0] > ranked["ihc-rental"][0]:
+            failures.append("hardware plus SaaS (worked well) ranks below rental (no takers)")
+        else:
+            print("Check passed: hardware plus SaaS ranks above rental, as in reality.")
     print()
     if "ihc-shared-leanheat" in ranked:
         pos, _ = ranked["ihc-shared-leanheat"]
         print(f"Info: shared Leanheat model ranks #{pos + 1} of {len(result['ranked'])} "
-              "(its mechanics are still marked TO CONFIRM, so this is not yet a real test).")
+              "(outcome not yet known, so no expectation is tested).")
     if failures:
         print("BACKTEST FAILED:", "; ".join(failures))
         sys.exit(1)
-    print("BACKTEST PASSED: rental ranks below all non-failed models and carries the failed-case warning.")
+    print("BACKTEST PASSED: rental ranks below all non-failed models, carries the failed-case warning, and hardware plus SaaS ranks above it.")
 
 
 if __name__ == "__main__":
