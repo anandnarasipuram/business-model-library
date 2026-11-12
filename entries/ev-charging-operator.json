@@ -1,0 +1,172 @@
+{
+  "id": "ev-charging-operator",
+  "name": "EV charge point operation (three operating models)",
+  "aliases": [
+    "CPO",
+    "charging as a service",
+    "owner-operator charging"
+  ],
+  "archetype": "ev_charging",
+  "sector": "energy+iot",
+  "summary": "Operators run charging hardware under three main models: network operator (sell hardware, earn network fees), owner-operator (own sites, set prices) and charging-as-a-service (turnkey solution for a subscription fee).",
+  "how_it_makes_money": "Margin on energy sold, subscription or network fees, or hardware and service fees, depending on model; profitability depends on utilisation because fixed costs are high.",
+  "building_blocks": {
+    "hardware": [
+      "Chargers",
+      "Grid connection"
+    ],
+    "software": [
+      "Charging management and billing platform",
+      "Roaming connections"
+    ],
+    "sites_assets": [
+      "Charging sites (public, commercial, fleet)"
+    ],
+    "partners": [
+      "Site hosts",
+      "Energy suppliers",
+      "Roaming and payment partners"
+    ],
+    "regulation": [
+      "Calibration and billing compliance",
+      "Grid connection rules"
+    ],
+    "financing": [
+      "Capital-heavy for owner-operators"
+    ],
+    "channel": [
+      "Apps, cards, roaming, site hosts"
+    ],
+    "data": [
+      "Charging sessions",
+      "Utilisation"
+    ]
+  },
+  "stakeholder_value": {
+    "customer": "Access to charging",
+    "provider": "Energy margin or fees",
+    "partner": "Site host revenue share or turnkey service"
+  },
+  "what_must_be_true": [
+    "Utilisation is high enough to cover fixed costs",
+    "Grid capacity is available at the site",
+    "Customers return and prices stay competitive"
+  ],
+  "risks_failure_causes": [
+    {
+      "tag": "low_utilisation",
+      "text": "A 2021 BCG analysis found most business models unprofitable because of low charger utilisation",
+      "evidence": "documented"
+    },
+    {
+      "tag": "high_fixed_cost",
+      "text": "Revenue depends on energy sold while fixed costs do not shrink, so payback is long",
+      "evidence": "documented"
+    },
+    {
+      "tag": "grid_capacity",
+      "text": "Grid capacity increasingly constrains where operators can build",
+      "evidence": "documented"
+    }
+  ],
+  "evidence": "documented",
+  "outcome": "unproven",
+  "cases": [
+    {
+      "company": "ChargePoint (network operator model)",
+      "market": "global",
+      "period": "ongoing",
+      "outcome": "unproven",
+      "evidence": "documented",
+      "note": "Sells hardware to site hosts and earns network fees; the host sets the price.",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "company": "Tesla (owner-operator model)",
+      "market": "global",
+      "period": "ongoing",
+      "outcome": "unproven",
+      "evidence": "documented",
+      "note": "Owns infrastructure, sets prices, relies on driver subscription fees and high utilisation.",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "company": "Virta (charging as a service)",
+      "market": "EU",
+      "period": "ongoing",
+      "outcome": "unproven",
+      "evidence": "documented",
+      "note": "Turnkey solution for site owners for a recurring subscription fee.",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "company": "Numbat",
+      "market": "DE",
+      "period": "2024",
+      "outcome": "failed",
+      "evidence": "documented",
+      "note": "German startup with battery-backed fast chargers, mostly at retail sites, filed for insolvency in August 2024.",
+      "source_ids": [
+        "s4"
+      ]
+    }
+  ],
+  "parameters": [],
+  "match": {
+    "segments": [
+      "commercial",
+      "public"
+    ],
+    "customer_capex": "low",
+    "needs": {
+      "provider_financing": true,
+      "measurable_savings": false,
+      "installer_network": true,
+      "own_hardware": true,
+      "smart_meter": false
+    },
+    "domains": [
+      "mobility"
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "public",
+      "title": "FIA Region 1 / Ricardo: Public EV charging in Europe (Sept 2025)",
+      "url": "https://www.fiaregion1.com/wp-content/uploads/2025/10/ED21732-FIA-Research-on-Electricity-Market-Dynamics-and-E-Mobility-Report_FINAL-1.pdf",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s2",
+      "kind": "public",
+      "title": "BCG: The evolution of charging infrastructures for electric vehicles (2021)",
+      "url": "https://www.bcg.com/publications/2021/the-evolution-of-charging-infrastructures-for-electric-vehicles",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s3",
+      "kind": "public",
+      "title": "PwC Strategy&: EV charging market outlook 2026",
+      "url": "https://www.strategyand.pwc.com/n1/en/ev-charging-market-outlook-2026.html",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s4",
+      "kind": "press",
+      "title": "electrive: Numbat meldet Insolvenz an",
+      "url": "https://www.electrive.net/2024/08/12/numbat-meldet-insolvenz-an/",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+}

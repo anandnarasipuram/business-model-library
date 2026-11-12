@@ -1,73 +1,1136 @@
 [
  {
-  "id": "shared-savings-heating-optimisation",
-  "name": "Shared-savings heating optimisation",
+  "id": "dynamic-tariff-hardware-bundle",
+  "name": "Dynamic tariff bundled with devices or smart metering",
   "aliases": [
-   "savings-share model",
-   "energy-efficiency-as-a-service for heating",
-   "EEaaS"
+   "dynamic tariff plus hardware",
+   "smart tariff bundle"
   ],
-  "archetype": "shared_savings",
+  "archetype": "tariff_bundle",
   "sector": "energy+iot",
-  "summary": "A provider installs sensors and optimisation software in a building's heating system at no upfront cost to the owner and is paid a share of the measured heating savings.",
-  "perspective": "product_company",
-  "how_it_makes_money": "Provider receives an agreed share of verified heating-energy savings over a contract term. The customer pays no capital expenditure for hardware or software.",
+  "summary": "A supplier sells hourly-priced electricity and bundles it with devices (smart meter bridge, wallbox, heat pump or battery installation) and an app that shifts consumption to cheap hours.",
+  "how_it_makes_money": "Supply margin and service fees from the electricity contract; devices and installation are sold or discounted to win customers who can use dynamic prices.",
   "building_blocks": {
    "hardware": [
-    "Sensors in the heating system",
-    "Gateway or connectivity unit"
+    "Smart meter or meter reader bridge",
+    "Wallbox, battery or heat pump (optional bundle)"
    ],
    "software": [
-    "Optimisation logic for heating control",
-    "Monitoring and savings-measurement layer",
-    "Web app for customers and operators"
+    "Consumer app",
+    "Price forecast and automation"
    ],
    "sites_assets": [
-    "Existing building heating systems (multi-family, mixed-use, commercial)"
+    "Customer homes with controllable loads"
    ],
    "partners": [
-    "Installers for roll-out",
-    "Possibly hardware or heating-system vendors"
+    "Meter operators",
+    "Installers",
+    "Device makers"
    ],
    "regulation": [
-    "Building energy regulation and subsidy rules in the target market (check per country)"
+    "Smart meter rollout rules",
+    "Supplier obligations for dynamic tariffs"
    ],
    "financing": [
-    "Provider carries hardware and roll-out cost until savings pay back"
+    "Device subsidies funded from expected supply margin"
    ],
    "channel": [
-    "Direct to property owners and managers"
+    "Direct digital sales, comparison, partner referrals"
    ],
    "data": [
-    "Baseline consumption",
-    "Ongoing metered consumption and sensor data for savings verification"
+    "Quarter-hourly or hourly consumption",
+    "Day-ahead prices"
    ]
   },
   "stakeholder_value": {
-   "customer": "Lower heating cost without upfront investment",
-   "provider": "Recurring revenue tied to delivered savings",
-   "partner": "Installation work (if installers are involved)"
+   "customer": "Lower cost if load is shifted",
+   "provider": "Customer base and supply margin",
+   "other": "Grid benefits from shifted load"
   },
   "what_must_be_true": [
-   "Savings can be measured credibly against an agreed baseline",
-   "Achieved savings are large enough to cover provider cost and still leave the customer a gain",
-   "The provider can fund hardware and roll-out until payback",
-   "Customer accepts a multi-year contract and data access"
+   "Customers have a smart meter or a bridge device",
+   "Customers own loads they can shift",
+   "Supplier can price and hedge dynamic supply",
+   "Customer acquisition cost stays below lifetime margin"
+  ],
+  "risks_failure_causes": [
+   {
+    "tag": "smart_meter_bottleneck",
+    "text": "Smart meter coverage gates how many customers can take the tariff",
+    "evidence": "documented"
+   },
+   {
+    "tag": "price_risk",
+    "text": "Customers carry month-to-month price variability, which can put off households",
+    "evidence": "inferred"
+   },
+   {
+    "tag": "edge_cases",
+    "text": "Customers without working connectivity or meters cannot be served",
+    "evidence": "inferred"
+   }
+  ],
+  "evidence": "inferred",
+  "outcome": "unproven",
+  "cases": [
+   {
+    "company": "Tibber",
+    "market": "DE, NL, Nordics",
+    "period": "ongoing",
+    "outcome": "unproven",
+    "evidence": "documented",
+    "note": "Offers a bridge reader (Tibber Pulse) for digital meters so customers can use dynamic prices without a smart meter, and offers wallbox purchase with installation.",
+    "source_ids": [
+     "s1",
+     "s2"
+    ]
+   },
+   {
+    "company": "Octopus Energy",
+    "market": "UK, DE",
+    "period": "ongoing",
+    "outcome": "unproven",
+    "evidence": "documented",
+    "note": "Some especially cheap smart tariffs are bundled with installation of a heat pump, battery or solar. Octopus, Tibber and Rabot started a smart meter initiative in Germany.",
+    "source_ids": [
+     "s3",
+     "s4"
+    ]
+   }
+  ],
+  "parameters": [],
+  "match": {
+   "segments": [
+    "sfh"
+   ],
+   "customer_capex": "low",
+   "needs": {
+    "provider_financing": false,
+    "measurable_savings": false,
+    "installer_network": false,
+    "own_hardware": true,
+    "smart_meter": true
+   },
+   "domains": [
+    "electricity",
+    "flexibility"
+   ]
+  },
+  "sources": [
+   {
+    "id": "s1",
+    "kind": "public",
+    "title": "RESET: Consume energy when it's cheap and green with dynamic electricity tariffs",
+    "url": "https://en.reset.org/consume-energy-when-it-is-cheap-with-dynamic-electricity-tariffs/",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s2",
+    "kind": "press",
+    "title": "homeandsmart: Vorteile der dynamischen Tarife von tibber",
+    "url": "https://www.homeandsmart.de/?p=54108",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s3",
+    "kind": "public",
+    "title": "Net Zero Home UK: smart tariffs",
+    "url": "https://www.netzerohome.uk/smart-tariffs",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s4",
+    "kind": "public",
+    "title": "Ostrom: Smart Meter Initiative",
+    "url": "https://www.ostrom.de/en/smart-meter-initiative",
+    "accessed": "2026-11-12"
+   }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+ },
+ {
+  "id": "epc-guaranteed-savings",
+  "name": "Energy performance contract: guaranteed savings",
+  "aliases": [
+   "EPC guaranteed savings",
+   "ESCO guaranteed savings"
+  ],
+  "archetype": "guaranteed_savings",
+  "sector": "energy",
+  "summary": "An energy service company implements efficiency measures and guarantees a minimum level of savings. If savings fall short it compensates the customer; the customer usually finances the project.",
+  "how_it_makes_money": "Fee for project delivery and service, tied to the guaranteed savings level; savings above the guarantee may be split with the customer.",
+  "building_blocks": {
+   "hardware": [
+    "Efficiency measures installed in the building or plant"
+   ],
+   "software": [
+    "Monitoring and measurement and verification tooling"
+   ],
+   "sites_assets": [
+    "Customer buildings or facilities, often public"
+   ],
+   "partners": [
+    "Banks or financiers lending to the customer",
+    "Contractors"
+   ],
+   "regulation": [
+    "Public procurement rules",
+    "Contract and measurement standards"
+   ],
+   "financing": [
+    "Usually customer-financed, with the ESCO guarantee supporting the loan"
+   ],
+   "channel": [
+    "Tenders and direct sales to public and commercial owners"
+   ],
+   "data": [
+    "Energy baseline",
+    "Ongoing consumption data for verification"
+   ]
+  },
+  "stakeholder_value": {
+   "customer": "Guaranteed bill reduction with performance risk moved to the ESCO",
+   "provider": "Project and service revenue, upside above the guarantee",
+   "other": "Lenders get a performance guarantee"
+  },
+  "what_must_be_true": [
+   "Baseline and verification method are agreed up front",
+   "Real savings reliably exceed the guarantee with a safety buffer",
+   "Customer is creditworthy and can finance the project",
+   "Procurement rules allow performance-based contracts"
   ],
   "risks_failure_causes": [
    {
     "tag": "measurement_dispute",
-    "text": "Disagreement on baseline or weather correction makes savings contestable",
+    "text": "Disagreement on baseline adjustments or measured savings",
     "evidence": "inferred"
    },
    {
-    "tag": "payback_too_long",
-    "text": "Low savings in small or already efficient buildings stretch payback beyond what the provider can finance",
+    "tag": "shortfall_liability",
+    "text": "ESCO must compensate the customer if savings fall below the guarantee",
+    "evidence": "documented"
+   },
+   {
+    "tag": "procurement_gap",
+    "text": "Public agencies may lack procurement rules or understanding for performance contracting",
+    "evidence": "documented"
+   }
+  ],
+  "evidence": "documented",
+  "outcome": "successful",
+  "cases": [
+   {
+    "company": "European ESCO market",
+    "market": "EU",
+    "period": "ongoing",
+    "outcome": "successful",
+    "evidence": "documented",
+    "note": "Guaranteed savings is reported as the most common EPC type in Europe and heavily used in North America, Africa, the Middle East and Australia.",
+    "source_ids": [
+     "s1",
+     "s2"
+    ]
+   }
+  ],
+  "parameters": [],
+  "match": {
+   "segments": [
+    "mfh",
+    "commercial",
+    "public",
+    "industrial"
+   ],
+   "customer_capex": "high",
+   "needs": {
+    "provider_financing": false,
+    "measurable_savings": true,
+    "installer_network": false,
+    "own_hardware": false,
+    "smart_meter": false
+   },
+   "domains": [
+    "general"
+   ]
+  },
+  "sources": [
+   {
+    "id": "s1",
+    "kind": "public",
+    "title": "IEA: Energy performance contract models",
+    "url": "https://www.iea.org/reports/energy-service-companies-escos-2/esco-contracts",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s2",
+    "kind": "public",
+    "title": "JRC Green Best Practice: energy performance contracting",
+    "url": "https://greenbestpractice.jrc.ec.europa.eu/print/pdf/node/381",
+    "accessed": "2026-11-12"
+   }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+ },
+ {
+  "id": "epc-shared-savings",
+  "name": "Energy performance contract: shared savings",
+  "aliases": [
+   "EPC shared savings",
+   "ESCO shared savings"
+  ],
+  "archetype": "shared_savings",
+  "sector": "energy",
+  "summary": "The ESCO finances and delivers the project and is repaid with an agreed share of the energy savings over a fixed period. The ESCO carries financing and performance risk.",
+  "how_it_makes_money": "Pre-agreed percentage of verified savings for a fixed number of years; a larger share goes to the ESCO because of the up-front investment.",
+  "building_blocks": {
+   "hardware": [
+    "Efficiency measures installed by the ESCO"
+   ],
+   "software": [
+    "Monitoring and verification tooling"
+   ],
+   "sites_assets": [
+    "Customer buildings or facilities"
+   ],
+   "partners": [
+    "Lenders to the ESCO",
+    "Contractors"
+   ],
+   "regulation": [
+    "Accounting treatment of the contract (on or off balance sheet)",
+    "Public procurement rules"
+   ],
+   "financing": [
+    "ESCO funds the project from its own funds or loans and carries credit risk"
+   ],
+   "channel": [
+    "Direct and tender-based sales"
+   ],
+   "data": [
+    "Baseline",
+    "Metered consumption for savings measurement"
+   ]
+  },
+  "stakeholder_value": {
+   "customer": "No up-front investment; pays out of savings",
+   "provider": "Share of savings over the term",
+   "other": "Lenders to the ESCO bear credit risk"
+  },
+  "what_must_be_true": [
+   "Savings can be measured credibly and customers do not contest them",
+   "Savings are large enough to repay the ESCO's investment within the term",
+   "ESCO has access to financing",
+   "Customer accepts a larger savings share going to the provider"
+  ],
+  "risks_failure_causes": [
+   {
+    "tag": "owner_incentive_to_dispute",
+    "text": "Owners have an incentive to challenge measured savings to reduce payments",
+    "evidence": "documented"
+   },
+   {
+    "tag": "financing_burden",
+    "text": "ESCO-financed projects are more expensive and less capital efficient for the provider",
+    "evidence": "documented"
+   },
+   {
+    "tag": "complexity",
+    "text": "More complex contracts than guaranteed savings; accounting treatment issues",
+    "evidence": "documented"
+   }
+  ],
+  "evidence": "documented",
+  "outcome": "niche",
+  "cases": [
+   {
+    "company": "Japan and Philippines ESCO markets",
+    "market": "JP, PH",
+    "period": "ongoing",
+    "outcome": "successful",
+    "evidence": "documented",
+    "note": "Shared savings is used in over 75 percent of contracts according to the IEA.",
+    "source_ids": [
+     "s1"
+    ]
+   },
+   {
+    "company": "European markets",
+    "market": "EU",
+    "period": "ongoing",
+    "outcome": "niche",
+    "evidence": "documented",
+    "note": "Guaranteed savings is more common in Europe than shared savings. A 2013 US state document notes that shared savings is rarely favored by owners.",
+    "source_ids": [
+     "s1",
+     "s2"
+    ]
+   }
+  ],
+  "parameters": [],
+  "match": {
+   "segments": [
+    "mfh",
+    "commercial",
+    "public",
+    "industrial"
+   ],
+   "customer_capex": "none",
+   "needs": {
+    "provider_financing": true,
+    "measurable_savings": true,
+    "installer_network": false,
+    "own_hardware": false,
+    "smart_meter": false
+   },
+   "domains": [
+    "general"
+   ]
+  },
+  "sources": [
+   {
+    "id": "s1",
+    "kind": "public",
+    "title": "IEA: Energy performance contract models",
+    "url": "https://www.iea.org/reports/energy-service-companies-escos-2/esco-contracts",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s2",
+    "kind": "public",
+    "title": "Hawaii State Energy Office: Pros and cons of guaranteed vs shared energy savings (2013)",
+    "url": "https://energy.hawaii.gov/wp-content/uploads/2012/06/Pros-and-Cons-of-guaranteed-vs.-shared-energy-savings-2013.pdf",
+    "accessed": "2026-11-12"
+   }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+ },
+ {
+  "id": "ev-charging-operator",
+  "name": "EV charge point operation (three operating models)",
+  "aliases": [
+   "CPO",
+   "charging as a service",
+   "owner-operator charging"
+  ],
+  "archetype": "ev_charging",
+  "sector": "energy+iot",
+  "summary": "Operators run charging hardware under three main models: network operator (sell hardware, earn network fees), owner-operator (own sites, set prices) and charging-as-a-service (turnkey solution for a subscription fee).",
+  "how_it_makes_money": "Margin on energy sold, subscription or network fees, or hardware and service fees, depending on model; profitability depends on utilisation because fixed costs are high.",
+  "building_blocks": {
+   "hardware": [
+    "Chargers",
+    "Grid connection"
+   ],
+   "software": [
+    "Charging management and billing platform",
+    "Roaming connections"
+   ],
+   "sites_assets": [
+    "Charging sites (public, commercial, fleet)"
+   ],
+   "partners": [
+    "Site hosts",
+    "Energy suppliers",
+    "Roaming and payment partners"
+   ],
+   "regulation": [
+    "Calibration and billing compliance",
+    "Grid connection rules"
+   ],
+   "financing": [
+    "Capital-heavy for owner-operators"
+   ],
+   "channel": [
+    "Apps, cards, roaming, site hosts"
+   ],
+   "data": [
+    "Charging sessions",
+    "Utilisation"
+   ]
+  },
+  "stakeholder_value": {
+   "customer": "Access to charging",
+   "provider": "Energy margin or fees",
+   "partner": "Site host revenue share or turnkey service"
+  },
+  "what_must_be_true": [
+   "Utilisation is high enough to cover fixed costs",
+   "Grid capacity is available at the site",
+   "Customers return and prices stay competitive"
+  ],
+  "risks_failure_causes": [
+   {
+    "tag": "low_utilisation",
+    "text": "A 2021 BCG analysis found most business models unprofitable because of low charger utilisation",
+    "evidence": "documented"
+   },
+   {
+    "tag": "high_fixed_cost",
+    "text": "Revenue depends on energy sold while fixed costs do not shrink, so payback is long",
+    "evidence": "documented"
+   },
+   {
+    "tag": "grid_capacity",
+    "text": "Grid capacity increasingly constrains where operators can build",
+    "evidence": "documented"
+   }
+  ],
+  "evidence": "documented",
+  "outcome": "unproven",
+  "cases": [
+   {
+    "company": "ChargePoint (network operator model)",
+    "market": "global",
+    "period": "ongoing",
+    "outcome": "unproven",
+    "evidence": "documented",
+    "note": "Sells hardware to site hosts and earns network fees; the host sets the price.",
+    "source_ids": [
+     "s1"
+    ]
+   },
+   {
+    "company": "Tesla (owner-operator model)",
+    "market": "global",
+    "period": "ongoing",
+    "outcome": "unproven",
+    "evidence": "documented",
+    "note": "Owns infrastructure, sets prices, relies on driver subscription fees and high utilisation.",
+    "source_ids": [
+     "s1"
+    ]
+   },
+   {
+    "company": "Virta (charging as a service)",
+    "market": "EU",
+    "period": "ongoing",
+    "outcome": "unproven",
+    "evidence": "documented",
+    "note": "Turnkey solution for site owners for a recurring subscription fee.",
+    "source_ids": [
+     "s1"
+    ]
+   },
+   {
+    "company": "Numbat",
+    "market": "DE",
+    "period": "2024",
+    "outcome": "failed",
+    "evidence": "documented",
+    "note": "German startup with battery-backed fast chargers, mostly at retail sites, filed for insolvency in August 2024.",
+    "source_ids": [
+     "s4"
+    ]
+   }
+  ],
+  "parameters": [],
+  "match": {
+   "segments": [
+    "commercial",
+    "public"
+   ],
+   "customer_capex": "low",
+   "needs": {
+    "provider_financing": true,
+    "measurable_savings": false,
+    "installer_network": true,
+    "own_hardware": true,
+    "smart_meter": false
+   },
+   "domains": [
+    "mobility"
+   ]
+  },
+  "sources": [
+   {
+    "id": "s1",
+    "kind": "public",
+    "title": "FIA Region 1 / Ricardo: Public EV charging in Europe (Sept 2025)",
+    "url": "https://www.fiaregion1.com/wp-content/uploads/2025/10/ED21732-FIA-Research-on-Electricity-Market-Dynamics-and-E-Mobility-Report_FINAL-1.pdf",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s2",
+    "kind": "public",
+    "title": "BCG: The evolution of charging infrastructures for electric vehicles (2021)",
+    "url": "https://www.bcg.com/publications/2021/the-evolution-of-charging-infrastructures-for-electric-vehicles",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s3",
+    "kind": "public",
+    "title": "PwC Strategy&: EV charging market outlook 2026",
+    "url": "https://www.strategyand.pwc.com/n1/en/ev-charging-market-outlook-2026.html",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s4",
+    "kind": "press",
+    "title": "electrive: Numbat meldet Insolvenz an",
+    "url": "https://www.electrive.net/2024/08/12/numbat-meldet-insolvenz-an/",
+    "accessed": "2026-11-12"
+   }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+ },
+ {
+  "id": "heat-contracting-waermelieferung",
+  "name": "Heat contracting (Wärmelieferung) in rented buildings",
+  "aliases": [
+   "Wärme-Contracting",
+   "commercial heat supply"
+  ],
+  "archetype": "other",
+  "sector": "energy",
+  "summary": "A landlord outsources heat generation and supply to a contractor who installs, runs and maintains the heating plant; the cost is passed on to tenants through heating bills.",
+  "how_it_makes_money": "The contractor sells heat at a price formula agreed with the landlord. Capital costs and profit are included in the price that tenants end up paying.",
+  "building_blocks": {
+   "hardware": [
+    "Heating plant, often continuing to run the existing gas boiler"
+   ],
+   "software": [
+    "Metering and billing"
+   ],
+   "sites_assets": [
+    "Multi-family rental buildings"
+   ],
+   "partners": [
+    "Landlords and housing companies",
+    "Contractor subsidiaries of landlords"
+   ],
+   "regulation": [
+    "Section 556c BGB cost-neutrality rule",
+    "Heat supply ordinance (WärmeLV)"
+   ],
+   "financing": [
+    "Contractor finances installations"
+   ],
+   "channel": [
+    "Large housing companies"
+   ],
+   "data": [
+    "Heat consumption and price formulas"
+   ]
+  },
+  "stakeholder_value": {
+   "customer": "Landlord: no investment and less risk; tenants: not clearly better off",
+   "provider": "Long-term heat supply revenue"
+  },
+  "what_must_be_true": [
+   "Price formulas hold up legally",
+   "Cost neutrality for tenants can be shown or avoided",
+   "Landlord-contractor relationships stay acceptable to regulators and tenants"
+  ],
+  "risks_failure_causes": [
+   {
+    "tag": "tenant_cost_increase",
+    "text": "Journalists and tenant groups report that price formulas are factually wrong, ineffective or contested and tenant costs rise",
+    "evidence": "documented"
+   },
+   {
+    "tag": "regulatory_tightening",
+    "text": "The German Tenants' Association demands binding rules and a price cap for heat supply contracts in rented buildings",
+    "evidence": "documented"
+   },
+   {
+    "tag": "split_incentive_misuse",
+    "text": "Contractors that are subsidiaries of the landlord weaken the efficiency incentive; often the old gas boiler simply keeps running",
+    "evidence": "documented"
+   }
+  ],
+  "evidence": "documented",
+  "outcome": "successful",
+  "cases": [
+   {
+    "company": "German housing market",
+    "market": "DE",
+    "period": "since 1990s",
+    "outcome": "successful",
+    "evidence": "documented",
+    "note": "Around four million apartments are supplied under contracting contracts according to industry figures, but how many benefit financially is questioned. Consumer groups estimate at least hundreds of thousands of tenants pay too much.",
+    "source_ids": [
+     "s1",
+     "s2"
+    ]
+   }
+  ],
+  "parameters": [],
+  "match": {
+   "segments": [
+    "mfh"
+   ],
+   "domains": [
+    "heating"
+   ],
+   "customer_capex": "none",
+   "needs": {
+    "provider_financing": true,
+    "measurable_savings": false,
+    "installer_network": true,
+    "own_hardware": true,
+    "smart_meter": false
+   }
+  },
+  "sources": [
+   {
+    "id": "s1",
+    "kind": "press",
+    "title": "Utopia: Hunderttausende Mieter zahlen zu hohe Heizkosten (Correctiv research)",
+    "url": "https://utopia.de/news/abzocke-hunderttausende-mieterinnen-zahlen-zu-hohe-heizkosten_749404/",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s2",
+    "kind": "public",
+    "title": "Berliner Mieterverein: Wärmecontracting",
+    "url": "https://www.berliner-mieterverein.de/magazin/online/mm0425/contracting.htm",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s3",
+    "kind": "public",
+    "title": "Deutscher Mieterbund: Forderungspapier Wärmelieferung (Aug 2025)",
+    "url": "https://mieterbund.de/app/uploads/2025/08/DMB-WaermeLV_Forderungspapier_070825.pdf",
+    "accessed": "2026-11-12"
+   }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+ },
+ {
+  "id": "heat-pump-rental-subscription",
+  "name": "Heat pump rental or subscription",
+  "aliases": [
+   "heat pump as a service",
+   "heat pump leasing",
+   "Heat Pumps on Subscription (HPoS)"
+  ],
+  "archetype": "rental_leasing",
+  "sector": "energy+iot",
+  "summary": "The provider owns or finances the heat pump and the customer pays a fixed monthly fee instead of buying it. Variants range from pure rental to subscription with maintenance.",
+  "how_it_makes_money": "Monthly fee over a multi-year term that recovers equipment, installation and financing cost plus margin; service and maintenance may be bundled.",
+  "building_blocks": {
+   "hardware": [
+    "Heat pump",
+    "Installation work"
+   ],
+   "software": [
+    "Contract and billing system",
+    "Remote monitoring (optional)"
+   ],
+   "sites_assets": [
+    "Customer buildings (homes, or rented commercial and public buildings)"
+   ],
+   "partners": [
+    "Installers",
+    "Equipment manufacturer",
+    "Financing partner"
+   ],
+   "regulation": [
+    "Consumer-protection rules for long contracts",
+    "Subsidy rules (differ for rented vs owned equipment)"
+   ],
+   "financing": [
+    "Provider or investor funds the equipment up front and recovers it through fees"
+   ],
+   "channel": [
+    "Direct, installer-led, or via manufacturer"
+   ],
+   "data": [
+    "Operating data to support service and performance claims"
+   ]
+  },
+  "stakeholder_value": {
+   "customer": "No upfront cost, predictable monthly payment",
+   "provider": "Recurring fee stream",
+   "partner": "Installation and service work",
+   "other": "Landlord-tenant split incentive can be resolved by a third-party owner (HP SUBSCRIBE rationale)"
+  },
+  "what_must_be_true": [
+   "Provider can fund equipment cheaply enough that the fee over the term stays acceptable to customers",
+   "Customers accept a long contract",
+   "Fee is not seen as much more expensive than buying",
+   "Service costs over the term are controlled"
+  ],
+  "risks_failure_causes": [
+   {
+    "tag": "price_perception",
+    "text": "Competitors argue customers pay many times the equipment value over a long rental term; this perception can undermine uptake (claim by a competitor, not independent evidence)",
     "evidence": "inferred"
    },
    {
-    "tag": "split_incentive",
-    "text": "Owner pays for the system while tenants benefit from lower bills (or the reverse)",
+    "tag": "financing_cost",
+    "text": "Cost of capital and long payback on provider-owned equipment can make the fee uncompetitive against instalment purchase",
+    "evidence": "inferred"
+   },
+   {
+    "tag": "lock_in_aversion",
+    "text": "Customers dislike being locked into long-term contracts",
+    "evidence": "inferred"
+   }
+  ],
+  "evidence": "inferred",
+  "outcome": "unproven",
+  "cases": [
+   {
+    "company": "Thermondo (with LG)",
+    "market": "DE",
+    "period": "2023 announcement, 2025 financing offer",
+    "outcome": "pivoted",
+    "evidence": "inferred",
+    "note": "In 2023 a rental at a fixed monthly price was announced with a target of about 10,000 installs. In 2025 Thermondo raised EUR 50M for an instalment purchase model where customers own the heat pump from the start. The sources do not state why or whether rental stopped.",
+    "source_ids": [
+     "s1",
+     "s2"
+    ]
+   },
+   {
+    "company": "1KOMMA5°",
+    "market": "DE",
+    "period": "2026",
+    "outcome": "unproven",
+    "evidence": "documented",
+    "note": "Positions an instalment purchase (5.99 percent financing) against rental and leasing and criticises long rental contracts. This is a competitor's marketing position.",
+    "source_ids": [
+     "s3"
+    ]
+   },
+   {
+    "company": "Aira",
+    "market": "SE, UK",
+    "period": "founded 2022",
+    "outcome": "unproven",
+    "evidence": "documented",
+    "note": "Subscription that spreads the heat pump cost over monthly repayments; customers typically choose to pay back over 10 years.",
+    "source_ids": [
+     "s4"
+    ]
+   },
+   {
+    "company": "HP SUBSCRIBE (EU project)",
+    "market": "FR, AT, GR (pilots), IE",
+    "period": "2025-2026",
+    "outcome": "unproven",
+    "evidence": "documented",
+    "note": "EU-funded pilots of a subscription model for rented commercial and public buildings, aimed at the landlord-tenant split incentive. The project describes itself as laying foundations, not as having completed results.",
+    "source_ids": [
+     "s5"
+    ]
+   }
+  ],
+  "parameters": [],
+  "match": {
+   "segments": [
+    "sfh",
+    "mfh",
+    "commercial",
+    "public"
+   ],
+   "customer_capex": "none",
+   "needs": {
+    "provider_financing": true,
+    "measurable_savings": false,
+    "installer_network": true,
+    "own_hardware": true,
+    "smart_meter": false
+   },
+   "domains": [
+    "heating"
+   ]
+  },
+  "sources": [
+   {
+    "id": "s1",
+    "kind": "press",
+    "title": "Coolingpost: German company to offer heat pump rentals",
+    "url": "https://www.coolingpost.com/world-news/german-company-to-offer-heat-pump-rentals/",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s2",
+    "kind": "press",
+    "title": "tech.eu: thermondo secures EUR 50M to expand heat pump financing across Germany",
+    "url": "https://tech.eu/2025/07/18/thermondo-secures-eur50m-to-expand-heat-pump-financing-across-germany/",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s3",
+    "kind": "press",
+    "title": "1KOMMA5° press release, 17 June 2026",
+    "url": "https://1komma5.com/en/press/press-releases/1komma5-mobilizes-euro1-billion-for-residential-heat-pumps-batteries-and-solar-systems/",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s4",
+    "kind": "press",
+    "title": "inkl: Swedish Spotify of heat pumps hopes to reach more UK homes",
+    "url": "https://www.inkl.com/news/swedish-spotify-of-heat-pumps-hopes-to-reach-more-uk-homes",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s5",
+    "kind": "public",
+    "title": "EU BUILD UP: Heat Pumps on Subscription (HP SUBSCRIBE)",
+    "url": "https://build-up.ec.europa.eu/de/node/69216",
+    "accessed": "2026-11-12"
+   }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+ },
+ {
+  "id": "mieterstrom-tenant-electricity",
+  "name": "Tenant electricity (Mieterstrom)",
+  "aliases": [
+   "landlord-to-tenant power supply",
+   "Mieterstrom"
+  ],
+  "archetype": "tenant_energy",
+  "sector": "energy",
+  "summary": "A landlord or contractor installs rooftop PV on an apartment building and sells the power directly to tenants, who still get a grid supply for the rest.",
+  "how_it_makes_money": "Sale of on-site solar power to tenants at a price below grid supply, plus a federal tenant electricity surcharge and savings on certain levies and grid charges.",
+  "building_blocks": {
+   "hardware": [
+    "Rooftop PV",
+    "Optional battery storage",
+    "Metering that separates solar from grid power"
+   ],
+   "software": [
+    "Billing and tenant supply administration"
+   ],
+   "sites_assets": [
+    "Apartment buildings with suitable roofs"
+   ],
+   "partners": [
+    "Landlord or housing company",
+    "Electricity supplier or contractor",
+    "Metering operator"
+   ],
+   "regulation": [
+    "German tenant electricity rules and surcharge",
+    "Supply obligations towards tenants"
+   ],
+   "financing": [
+    "Landlord or contractor finances PV"
+   ],
+   "channel": [
+    "Landlords and housing companies"
+   ],
+   "data": [
+    "Metered production and consumption per tenant"
+   ]
+  },
+  "stakeholder_value": {
+   "customer": "Cheaper local solar power",
+   "provider": "Revenue from tenant supply and surcharge",
+   "other": "Landlord gets a use for the roof"
+  },
+  "what_must_be_true": [
+   "Building is large enough for the project to break even",
+   "Smart metering can separate solar and grid power",
+   "Enough tenants sign up",
+   "Administrative effort stays low"
+  ],
+  "risks_failure_causes": [
+   {
+    "tag": "legal_complexity",
+    "text": "Restrictive legal framework and high transaction costs are the main barrier found in expert interviews",
+    "evidence": "documented"
+   },
+   {
+    "tag": "small_building_economics",
+    "text": "Projects on buildings with fewer than 20 residential units tend not to be profitable (Berlin evaluation)",
+    "evidence": "documented"
+   },
+   {
+    "tag": "tenant_uptake_uncertainty",
+    "text": "Developers cannot be sure how many tenants will participate; tenants show inertia in switching",
+    "evidence": "documented"
+   },
+   {
+    "tag": "metering",
+    "text": "In existing buildings smart meters that separate solar and grid power often cannot be installed or cost too much",
+    "evidence": "documented"
+   }
+  ],
+  "evidence": "documented",
+  "outcome": "niche",
+  "cases": [
+   {
+    "company": "Germany overall",
+    "market": "DE",
+    "period": "2017-2024",
+    "outcome": "niche",
+    "evidence": "documented",
+    "note": "The scheme has been in place since 2017 yet only about 1 percent of its annual budget had been claimed by 2021, and as of April 2024 only about 9,000 PV systems existed on apartment buildings.",
+    "source_ids": [
+     "s1",
+     "s2"
+    ]
+   },
+   {
+    "company": "Berlin projects",
+    "market": "DE",
+    "period": "to end 2020",
+    "outcome": "niche",
+    "evidence": "documented",
+    "note": "74 PV tenant electricity projects with 12.6 MWp were in operation at the end of 2020.",
+    "source_ids": [
+     "s3"
+    ]
+   },
+   {
+    "company": "Ampeers Energy",
+    "market": "DE",
+    "period": "2025-2026",
+    "outcome": "pivoted",
+    "evidence": "documented",
+    "note": "Went through preliminary insolvency proceedings at the turn of the year; the operating business moved to a new company on 1 January 2026, and the tenant electricity business is being handed over to partners such as Polarstern while it focuses on building modernisation strategies.",
+    "source_ids": [
+     "s4"
+    ]
+   }
+  ],
+  "parameters": [],
+  "match": {
+   "segments": [
+    "mfh"
+   ],
+   "customer_capex": "none",
+   "needs": {
+    "provider_financing": true,
+    "measurable_savings": false,
+    "installer_network": true,
+    "own_hardware": true,
+    "smart_meter": true
+   },
+   "domains": [
+    "electricity"
+   ]
+  },
+  "sources": [
+   {
+    "id": "s1",
+    "kind": "public",
+    "title": "Moser et al. (2021): Solar prosumers in the German energy transition (Energies 14(4))",
+    "url": "https://mdpi.com/1996-1073/14/4/1188",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s2",
+    "kind": "press",
+    "title": "Clean Energy Wire: Germany's tenant electricity scheme leaves vast solar PV potential untapped",
+    "url": "https://cleanenergywire.org/news/germanys-tenant-electricity-scheme-leaves-vast-solar-pv-potential-untapped-report",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s3",
+    "kind": "public",
+    "title": "Ecologic: Evaluation Mieterstrom Berlin (StromNachbarn)",
+    "url": "https://www.ecologic.eu/sites/default/files/publication/2021/30005-Evaluation-Mieterstrom-StromNachbarn.pdf",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s4",
+    "kind": "press",
+    "title": "Munich Startup: Ampeers Energy is reorganizing",
+    "url": "https://www.munich-startup.de/en/116451/ampeers-energy-is-reorganizing/",
+    "accessed": "2026-11-12"
+   }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+ },
+ {
+  "id": "solar-rental-lease",
+  "name": "Solar system rental or lease (residential)",
+  "aliases": [
+   "PV leasing",
+   "solar as a service",
+   "Enpal model"
+  ],
+  "archetype": "rental_leasing",
+  "sector": "energy",
+  "summary": "A provider installs and owns a home PV system (often with battery) and the homeowner pays a flat monthly rent over a long term with no upfront cost; installation, maintenance and insurance are included.",
+  "how_it_makes_money": "Flat monthly lease payments over about 20 years; the provider also can benefit from incentives as owner of the system. Contribution margin was reported positive from the start in the early years.",
+  "building_blocks": {
+   "hardware": [
+    "PV modules",
+    "Battery (most new customers choose one)",
+    "Wallbox or heat pump as add-ons"
+   ],
+   "software": [
+    "Customer app and monitoring",
+    "Digital sales and installation process"
+   ],
+   "sites_assets": [
+    "Customer roofs"
+   ],
+   "partners": [
+    "Own or partner installers",
+    "Investors and lenders funding the installed base"
+   ],
+   "regulation": [
+    "Grid connection with more than 800 grid operators, each with its own process",
+    "Consumer-protection rules for long contracts"
+   ],
+   "financing": [
+    "Provider or investors carry the system cost for years; overleverage is a risk"
+   ],
+   "channel": [
+    "Aggressive digital performance marketing and in-house sales"
+   ],
+   "data": [
+    "System performance data for service"
+   ]
+  },
+  "stakeholder_value": {
+   "customer": "No upfront cost, flat monthly payment, service included",
+   "provider": "Long-term recurring revenue and a lasting customer relationship",
+   "partner": "Installation work"
+  },
+  "what_must_be_true": [
+   "Cost of capital is low enough to fund the installed base",
+   "Customers accept a very long contract",
+   "Installers can be hired or trained fast enough",
+   "Rent stays attractive compared with buying as module and storage prices fall"
+  ],
+  "risks_failure_causes": [
+   {
+    "tag": "price_criticism",
+    "text": "Competitors criticised the rental pricing; the provider publicly defended it",
+    "evidence": "documented"
+   },
+   {
+    "tag": "contract_length",
+    "text": "Some customers find the 20-year term too long",
+    "evidence": "inferred"
+   },
+   {
+    "tag": "falling_equipment_prices",
+    "text": "Falling prices for modules, storage and wallboxes put many providers under pressure and push customers to buy instead",
+    "evidence": "documented"
+   },
+   {
+    "tag": "overleverage",
+    "text": "Funding many rented systems up front can leave the provider overleveraged if customers do not use as much energy as projected",
     "evidence": "inferred"
    }
   ],
@@ -75,48 +1138,379 @@
   "outcome": "unproven",
   "cases": [
    {
-    "company": "Uponor",
-    "market": "DE, ES, DK",
-    "period": "pilot phase",
-    "outcome": "unproven",
+    "company": "Enpal",
+    "market": "DE",
+    "period": "since end of 2018",
+    "outcome": "successful",
     "evidence": "documented",
-    "note": "Sensor-based heating optimisation piloted in multi-family, mixed and commercial buildings; pilots started at 12-15% heating savings. Savings-share model designed with no customer CAPEX. Market outcome of the model to be confirmed.",
+    "note": "Offers a 20-year PV rental with no upfront payment. Had about 10,000 lease customers in 2021 and was not yet profitable then. Added an option to buy in 2023.",
     "source_ids": [
-     "s1"
+     "s1",
+     "s2"
+    ]
+   },
+   {
+    "company": "Zolar",
+    "market": "DE",
+    "period": "2024-2025",
+    "outcome": "pivoted",
+    "evidence": "documented",
+    "note": "Cut staff from nearly 400 to just under 50 in six months; the new CEO said the model it had run for nearly a decade would never have become profitable.",
+    "source_ids": [
+     "s3"
+    ]
+   }
+  ],
+  "parameters": [],
+  "match": {
+   "segments": [
+    "sfh"
+   ],
+   "domains": [
+    "electricity",
+    "flexibility"
+   ],
+   "customer_capex": "none",
+   "needs": {
+    "provider_financing": true,
+    "measurable_savings": false,
+    "installer_network": true,
+    "own_hardware": true,
+    "smart_meter": false
+   }
+  },
+  "sources": [
+   {
+    "id": "s1",
+    "kind": "press",
+    "title": "TechCrunch: Enpal closes Series C (Oct 2021)",
+    "url": "https://techcrunch.com/2021/10/17/enpal-closes-out-series-c-with-174m-from-softbank-for-tech-to-make-it-easier-for-homeowners-to-make-the-switch-to-solar-energy",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s2",
+    "kind": "press",
+    "title": "Startbase: Enpal responds to criticism of pricing model",
+    "url": "https://www.startbase.com/news/enpal-reagiert-auf-kritik-am-preismodell/",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s3",
+    "kind": "press",
+    "title": "Sifted via BeBeez: Zolar cuts workforce",
+    "url": "https://bebeez.eu/?p=56270",
+    "accessed": "2026-11-12"
+   }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+ },
+ {
+  "id": "submetering-metering-service",
+  "name": "Submetering and billing service for landlords",
+  "aliases": [
+   "heat cost allocation",
+   "remote meter reading service",
+   "Ablesedienst"
+  ],
+  "archetype": "submetering",
+  "sector": "energy+iot",
+  "summary": "A provider installs radio meters in every unit, reads them remotely and prepares consumption-based heating and water billing for landlords and property managers.",
+  "how_it_makes_money": "Service fees for metering devices, remote reading, data validation and billing. Exact fee structures are not in the sources and should be added.",
+  "building_blocks": {
+   "hardware": [
+    "Wireless meters and heat cost allocators",
+    "Collection points in buildings"
+   ],
+   "software": [
+    "Meter data management system",
+    "Billing engine",
+    "Resident and landlord portals"
+   ],
+   "sites_assets": [
+    "Multi-family buildings and commercial units"
+   ],
+   "partners": [
+    "Housing companies and property managers"
+   ],
+   "regulation": [
+    "Heating cost ordinance and national billing and remote-reading rules"
+   ],
+   "financing": [
+    "Provider-owned or service-rented devices (to confirm)"
+   ],
+   "channel": [
+    "Direct sales to housing companies"
+   ],
+   "data": [
+    "Meter readings",
+    "Consumption profiles"
+   ]
+  },
+  "stakeholder_value": {
+   "customer": "Landlord: compliant billing without on-site visits",
+   "provider": "Recurring service revenue with high switching effort for customers"
+  },
+  "what_must_be_true": [
+   "Regulation requires consumption-based billing and remote reading",
+   "Providers reach high remote-reading rates",
+   "Landlords stay with their provider"
+  ],
+  "risks_failure_causes": [
+   {
+    "tag": "competition_scrutiny",
+    "text": "The Bundeskartellamt examined the market, which is dominated by a few large players",
+    "evidence": "documented"
+   },
+   {
+    "tag": "billing_errors",
+    "text": "Customers report misread radio meters and weak support when billing is wrong",
+    "evidence": "inferred"
+   }
+  ],
+  "evidence": "documented",
+  "outcome": "successful",
+  "cases": [
+   {
+    "company": "Ista and Techem",
+    "market": "DE",
+    "period": "ongoing",
+    "outcome": "successful",
+    "evidence": "documented",
+    "note": "According to the Bundeskartellamt the two share 50 to 60 percent of the German market. Techem serves more than 13 million apartments and reports about 85 percent wireless reading.",
+    "source_ids": [
+     "s1",
+     "s2",
+     "s3"
+    ]
+   }
+  ],
+  "parameters": [],
+  "match": {
+   "segments": [
+    "mfh",
+    "commercial"
+   ],
+   "domains": [
+    "heating",
+    "general"
+   ],
+   "customer_capex": "low",
+   "needs": {
+    "provider_financing": true,
+    "measurable_savings": false,
+    "installer_network": true,
+    "own_hardware": true,
+    "smart_meter": false
+   }
+  },
+  "sources": [
+   {
+    "id": "s1",
+    "kind": "press",
+    "title": "CIO: Die Macht der Ablesefirmen",
+    "url": "https://www.cio.de/a/die-macht-der-ablesefirmen,3591638",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s2",
+    "kind": "public",
+    "title": "CB Insights: Techem company profile",
+    "url": "https://www.cbinsights.com/company/techem",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s3",
+    "kind": "public",
+    "title": "Techem: Our solutions",
+    "url": "https://www.techem.com/corp/en/about-us/solutions",
+    "accessed": "2026-11-12"
+   }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+ },
+ {
+  "id": "vpp-home-battery-revenue-share",
+  "name": "Virtual power plant with revenue share for home batteries",
+  "aliases": [
+   "VPP",
+   "flexibility aggregation",
+   "sonnenFlat model"
+  ],
+  "archetype": "flexibility_revenue_share",
+  "sector": "energy+iot",
+  "summary": "An aggregator pools many home batteries (and other flexible devices) into one controllable resource, sells grid services and market products, and shares part of the proceeds with owners.",
+  "how_it_makes_money": "Revenue from grid services and energy trading, minus the share paid to asset owners and platform costs; the hardware seller can also earn on the battery sale or an electricity contract.",
+  "building_blocks": {
+   "hardware": [
+    "Home batteries or other flexible assets with remote control"
+   ],
+   "software": [
+    "Aggregation and dispatch platform",
+    "Market access and trading interface"
+   ],
+   "sites_assets": [
+    "Thousands of distributed assets in customer homes"
+   ],
+   "partners": [
+    "Grid operators",
+    "Trading partner or market access provider",
+    "Hardware manufacturer"
+   ],
+   "regulation": [
+    "Prequalification for balancing and reserve markets",
+    "Metering and data access rules"
+   ],
+   "financing": [
+    "Hardware financed by customer, provider or a bundled contract"
+   ],
+   "channel": [
+    "Bundled with battery sale and electricity contract"
+   ],
+   "data": [
+    "Asset state and meter data",
+    "Market prices"
+   ]
+  },
+  "stakeholder_value": {
+   "customer": "Share of VPP proceeds, often via an electricity contract",
+   "provider": "Platform and trading revenue",
+   "partner": "Trading and market access fees",
+   "other": "Grid operators get flexibility"
+  },
+  "what_must_be_true": [
+   "Enough assets are pooled to qualify for market products",
+   "Market prices leave a margin after the owner share and platform cost",
+   "Customers keep their devices online and allow remote control",
+   "Rules allow small assets to participate"
+  ],
+  "risks_failure_causes": [
+   {
+    "tag": "thin_revenue_per_asset",
+    "text": "Per-household revenue figures in public sources are small and vary widely, from tens to a few hundred euros per year",
+    "evidence": "assumed"
+   },
+   {
+    "tag": "market_dependence",
+    "text": "Revenue depends on market prices and product rules that can change",
+    "evidence": "inferred"
+   },
+   {
+    "tag": "connectivity",
+    "text": "Requires reliable internet connection and compatible hardware",
+    "evidence": "documented"
+   },
+   {
+    "tag": "provider_insolvency",
+    "text": "The pioneer aggregator sonnen filed for insolvency in October 2026, two months after Shell sold it; services for customers continue",
+    "evidence": "documented"
+   }
+  ],
+  "evidence": "documented",
+  "outcome": "unproven",
+  "cases": [
+   {
+    "company": "sonnen",
+    "market": "DE",
+    "period": "2019 onwards",
+    "outcome": "pivoted",
+    "evidence": "documented",
+    "note": "Launched SonnenFlat in 2019 sharing VPP proceeds with owners. By 2023 its VPP had 250 MWh with a target of 1 GWh in the following years, providing frequency containment reserve and exchange trading.",
+    "source_ids": [
+     "s1",
+     "s2"
+    ]
+   },
+   {
+    "company": "sonnen and Next Kraftwerke",
+    "market": "DE",
+    "period": "TransnetBW project",
+    "outcome": "successful",
+    "evidence": "documented",
+    "note": "Sonnen handles the connection of storage units while marketing and activation of reserve are done through Next Kraftwerke.",
+    "source_ids": [
+     "s3"
+    ]
+   },
+   {
+    "company": "sonnen (2026)",
+    "market": "DE",
+    "period": "Aug-Oct 2026",
+    "outcome": "failed",
+    "evidence": "documented",
+    "note": "Sold by Shell to investor TIVEN in August 2026 and filed for insolvency about two months later, as reported by Handelsblatt via energy-storage.news. Cost cuts did not reach targets. The VPP business of the company was an early mover and customer services continue. The cause is not stated beyond that.",
+    "source_ids": [
+     "s4"
     ]
    }
   ],
   "parameters": [
    {
-    "key": "heating_saving",
-    "label": "Heating energy saving",
-    "unit": "share",
-    "default": 0.12,
-    "low": 0.05,
-    "high": 0.15,
-    "evidence": "documented"
-   },
-   {
-    "key": "provider_share",
-    "label": "Provider share of savings",
-    "unit": "share",
-    "default": null,
-    "low": null,
-    "high": null,
+    "key": "revenue_per_asset_year",
+    "label": "Gross flexibility revenue per asset per year",
+    "unit": "EUR",
+    "default": 150,
+    "low": 50,
+    "high": 300,
     "evidence": "assumed"
    }
   ],
+  "match": {
+   "segments": [
+    "sfh",
+    "commercial"
+   ],
+   "customer_capex": "high",
+   "needs": {
+    "provider_financing": false,
+    "measurable_savings": false,
+    "installer_network": false,
+    "own_hardware": true,
+    "smart_meter": true
+   },
+   "domains": [
+    "flexibility",
+    "electricity"
+   ]
+  },
   "sources": [
    {
     "id": "s1",
-    "kind": "first_hand",
-    "title": "Author's own product work on the Uponor sensor-based heating optimisation pilots",
-    "url": "",
+    "kind": "press",
+    "title": "pv magazine: sonnen household battery owners offered revenue from grid balancing services (2019)",
+    "url": "https://www.pv-magazine.com/2019/11/21/sonnen-household-battery-owners-offered-revenue-from-grid-balancing-services",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s2",
+    "kind": "press",
+    "title": "sonnen press release: Europe's largest VPP (17 Aug 2023)",
+    "url": "https://sonnengroup.com/press/europes-largest-vpp/",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s3",
+    "kind": "press",
+    "title": "ZfK: TransnetBW nimmt virtuelles Kraftwerk in Betrieb",
+    "url": "https://www.zfk.de/unternehmen/nachrichten/transnetbw-nimmt-virtuelles-kraftwerk-in-betrieb",
+    "accessed": "2026-11-12"
+   },
+   {
+    "id": "s4",
+    "kind": "press",
+    "title": "energy-storage.news: Sonnen files for insolvency in Germany two months after Shell offloading",
+    "url": "https://www.energy-storage.news/sonnen-files-for-insolvency-in-germany-two-months-after-shell-offloading/",
     "accessed": "2026-11-12"
    }
   ],
+  "visibility": "public",
+  "perspective": "product_company",
   "last_verified": "2026-11-12",
-  "status": "draft",
-  "visibility": "public"
+  "status": "draft"
  }
 ]

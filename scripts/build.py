@@ -2,7 +2,7 @@
 
 Usage:
     python scripts/build.py            # public entries only -> site/entries.json
-    python scripts/build.py --private  # include private entries (local use only)
+    python scripts/build.py --private  # include private entries -> build/entries.private.json (never in site/)
 """
 import json
 import sys
@@ -16,6 +16,9 @@ ARCHETYPES = {
 }
 EVIDENCE = {"documented", "inferred", "assumed", "speculative"}
 OUTCOMES = {"successful", "failed", "pivoted", "unproven", "niche"}
+SEGMENTS = {"sfh", "mfh", "commercial", "public", "industrial"}
+DOMAINS = {"heating", "electricity", "flexibility", "mobility", "general"}
+NEEDS = {"provider_financing", "measurable_savings", "installer_network", "own_hardware", "smart_meter"}
 BLOCKS = {"hardware", "software", "sites_assets", "partners", "regulation", "financing", "channel", "data"}
 REQUIRED = [
     "id", "name", "archetype", "sector", "summary", "perspective", "how_it_makes_money",
@@ -49,6 +52,23 @@ def check(entry: dict, filename: str) -> list:
         for sid in case.get("source_ids", []):
             if sid not in source_ids:
                 errors.append(f"case '{case.get('company')}' cites unknown source '{sid}'")
+    m = entry.get("match")
+    if m is None:
+        errors.append("missing 'match' block")
+    else:
+        for seg in m.get("segments", []):
+            if seg not in SEGMENTS:
+                errors.append(f"unknown segment '{seg}'")
+        if m.get("customer_capex") not in {"none", "low", "high"}:
+            errors.append("match.customer_capex must be none, low or high")
+        for d in m.get("domains", []):
+            if d not in DOMAINS:
+                errors.append(f"unknown domain '{d}'")
+        if not m.get("domains"):
+            errors.append("match.domains missing")
+        missing_needs = NEEDS - set(m.get("needs", {}))
+        if missing_needs:
+            errors.append(f"match.needs missing: {sorted(missing_needs)}")
     for risk in entry["risks_failure_causes"]:
         if risk.get("evidence") not in EVIDENCE:
             errors.append(f"risk '{risk.get('tag')}' has bad evidence")
@@ -58,26 +78,34 @@ def check(entry: dict, filename: str) -> list:
 def main():
     include_private = "--private" in sys.argv
     out, failed = [], False
-    for path in sorted((ROOT / "entries").glob("*.json")):
+    paths = sorted((ROOT / "entries").glob("*.json"))
+    if include_private:
+        paths += sorted((ROOT / "private_entries").glob("*.json"))
+    for path in paths:
         entry = json.loads(path.read_text(encoding="utf-8"))
         errors = check(entry, path.stem)
+        in_private_folder = path.parent.name == "private_entries"
+        if entry.get("visibility") == "private" and not in_private_folder:
+            errors.append("private entries must live in private_entries/, not entries/")
+        if entry.get("visibility") == "public" and in_private_folder:
+            errors.append("public entries must live in entries/")
         if errors:
             failed = True
             print(f"FAIL {path.name}")
             for e in errors:
                 print(f"   - {e}")
             continue
-        if entry["visibility"] == "private" and not include_private:
-            print(f"skip {path.name} (private)")
-            continue
         out.append(entry)
         print(f"ok   {path.name}")
     if failed:
         sys.exit(1)
-    (ROOT / "site" / "entries.json").write_text(
-        json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8"
-    )
-    print(f"built site/entries.json with {len(out)} entries")
+    if include_private:
+        target = ROOT / "build" / "entries.private.json"
+        target.parent.mkdir(exist_ok=True)
+    else:
+        target = ROOT / "site" / "entries.json"
+    target.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"built {target.relative_to(ROOT)} with {len(out)} entries")
 
 
 if __name__ == "__main__":

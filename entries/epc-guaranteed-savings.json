@@ -1,0 +1,125 @@
+{
+  "id": "epc-guaranteed-savings",
+  "name": "Energy performance contract: guaranteed savings",
+  "aliases": [
+    "EPC guaranteed savings",
+    "ESCO guaranteed savings"
+  ],
+  "archetype": "guaranteed_savings",
+  "sector": "energy",
+  "summary": "An energy service company implements efficiency measures and guarantees a minimum level of savings. If savings fall short it compensates the customer; the customer usually finances the project.",
+  "how_it_makes_money": "Fee for project delivery and service, tied to the guaranteed savings level; savings above the guarantee may be split with the customer.",
+  "building_blocks": {
+    "hardware": [
+      "Efficiency measures installed in the building or plant"
+    ],
+    "software": [
+      "Monitoring and measurement and verification tooling"
+    ],
+    "sites_assets": [
+      "Customer buildings or facilities, often public"
+    ],
+    "partners": [
+      "Banks or financiers lending to the customer",
+      "Contractors"
+    ],
+    "regulation": [
+      "Public procurement rules",
+      "Contract and measurement standards"
+    ],
+    "financing": [
+      "Usually customer-financed, with the ESCO guarantee supporting the loan"
+    ],
+    "channel": [
+      "Tenders and direct sales to public and commercial owners"
+    ],
+    "data": [
+      "Energy baseline",
+      "Ongoing consumption data for verification"
+    ]
+  },
+  "stakeholder_value": {
+    "customer": "Guaranteed bill reduction with performance risk moved to the ESCO",
+    "provider": "Project and service revenue, upside above the guarantee",
+    "other": "Lenders get a performance guarantee"
+  },
+  "what_must_be_true": [
+    "Baseline and verification method are agreed up front",
+    "Real savings reliably exceed the guarantee with a safety buffer",
+    "Customer is creditworthy and can finance the project",
+    "Procurement rules allow performance-based contracts"
+  ],
+  "risks_failure_causes": [
+    {
+      "tag": "measurement_dispute",
+      "text": "Disagreement on baseline adjustments or measured savings",
+      "evidence": "inferred"
+    },
+    {
+      "tag": "shortfall_liability",
+      "text": "ESCO must compensate the customer if savings fall below the guarantee",
+      "evidence": "documented"
+    },
+    {
+      "tag": "procurement_gap",
+      "text": "Public agencies may lack procurement rules or understanding for performance contracting",
+      "evidence": "documented"
+    }
+  ],
+  "evidence": "documented",
+  "outcome": "successful",
+  "cases": [
+    {
+      "company": "European ESCO market",
+      "market": "EU",
+      "period": "ongoing",
+      "outcome": "successful",
+      "evidence": "documented",
+      "note": "Guaranteed savings is reported as the most common EPC type in Europe and heavily used in North America, Africa, the Middle East and Australia.",
+      "source_ids": [
+        "s1",
+        "s2"
+      ]
+    }
+  ],
+  "parameters": [],
+  "match": {
+    "segments": [
+      "mfh",
+      "commercial",
+      "public",
+      "industrial"
+    ],
+    "customer_capex": "high",
+    "needs": {
+      "provider_financing": false,
+      "measurable_savings": true,
+      "installer_network": false,
+      "own_hardware": false,
+      "smart_meter": false
+    },
+    "domains": [
+      "general"
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "public",
+      "title": "IEA: Energy performance contract models",
+      "url": "https://www.iea.org/reports/energy-service-companies-escos-2/esco-contracts",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s2",
+      "kind": "public",
+      "title": "JRC Green Best Practice: energy performance contracting",
+      "url": "https://greenbestpractice.jrc.ec.europa.eu/print/pdf/node/381",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+}

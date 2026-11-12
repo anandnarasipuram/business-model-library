@@ -1,0 +1,165 @@
+{
+  "id": "mieterstrom-tenant-electricity",
+  "name": "Tenant electricity (Mieterstrom)",
+  "aliases": [
+    "landlord-to-tenant power supply",
+    "Mieterstrom"
+  ],
+  "archetype": "tenant_energy",
+  "sector": "energy",
+  "summary": "A landlord or contractor installs rooftop PV on an apartment building and sells the power directly to tenants, who still get a grid supply for the rest.",
+  "how_it_makes_money": "Sale of on-site solar power to tenants at a price below grid supply, plus a federal tenant electricity surcharge and savings on certain levies and grid charges.",
+  "building_blocks": {
+    "hardware": [
+      "Rooftop PV",
+      "Optional battery storage",
+      "Metering that separates solar from grid power"
+    ],
+    "software": [
+      "Billing and tenant supply administration"
+    ],
+    "sites_assets": [
+      "Apartment buildings with suitable roofs"
+    ],
+    "partners": [
+      "Landlord or housing company",
+      "Electricity supplier or contractor",
+      "Metering operator"
+    ],
+    "regulation": [
+      "German tenant electricity rules and surcharge",
+      "Supply obligations towards tenants"
+    ],
+    "financing": [
+      "Landlord or contractor finances PV"
+    ],
+    "channel": [
+      "Landlords and housing companies"
+    ],
+    "data": [
+      "Metered production and consumption per tenant"
+    ]
+  },
+  "stakeholder_value": {
+    "customer": "Cheaper local solar power",
+    "provider": "Revenue from tenant supply and surcharge",
+    "other": "Landlord gets a use for the roof"
+  },
+  "what_must_be_true": [
+    "Building is large enough for the project to break even",
+    "Smart metering can separate solar and grid power",
+    "Enough tenants sign up",
+    "Administrative effort stays low"
+  ],
+  "risks_failure_causes": [
+    {
+      "tag": "legal_complexity",
+      "text": "Restrictive legal framework and high transaction costs are the main barrier found in expert interviews",
+      "evidence": "documented"
+    },
+    {
+      "tag": "small_building_economics",
+      "text": "Projects on buildings with fewer than 20 residential units tend not to be profitable (Berlin evaluation)",
+      "evidence": "documented"
+    },
+    {
+      "tag": "tenant_uptake_uncertainty",
+      "text": "Developers cannot be sure how many tenants will participate; tenants show inertia in switching",
+      "evidence": "documented"
+    },
+    {
+      "tag": "metering",
+      "text": "In existing buildings smart meters that separate solar and grid power often cannot be installed or cost too much",
+      "evidence": "documented"
+    }
+  ],
+  "evidence": "documented",
+  "outcome": "niche",
+  "cases": [
+    {
+      "company": "Germany overall",
+      "market": "DE",
+      "period": "2017-2024",
+      "outcome": "niche",
+      "evidence": "documented",
+      "note": "The scheme has been in place since 2017 yet only about 1 percent of its annual budget had been claimed by 2021, and as of April 2024 only about 9,000 PV systems existed on apartment buildings.",
+      "source_ids": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "company": "Berlin projects",
+      "market": "DE",
+      "period": "to end 2020",
+      "outcome": "niche",
+      "evidence": "documented",
+      "note": "74 PV tenant electricity projects with 12.6 MWp were in operation at the end of 2020.",
+      "source_ids": [
+        "s3"
+      ]
+    },
+    {
+      "company": "Ampeers Energy",
+      "market": "DE",
+      "period": "2025-2026",
+      "outcome": "pivoted",
+      "evidence": "documented",
+      "note": "Went through preliminary insolvency proceedings at the turn of the year; the operating business moved to a new company on 1 January 2026, and the tenant electricity business is being handed over to partners such as Polarstern while it focuses on building modernisation strategies.",
+      "source_ids": [
+        "s4"
+      ]
+    }
+  ],
+  "parameters": [],
+  "match": {
+    "segments": [
+      "mfh"
+    ],
+    "customer_capex": "none",
+    "needs": {
+      "provider_financing": true,
+      "measurable_savings": false,
+      "installer_network": true,
+      "own_hardware": true,
+      "smart_meter": true
+    },
+    "domains": [
+      "electricity"
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "public",
+      "title": "Moser et al. (2021): Solar prosumers in the German energy transition (Energies 14(4))",
+      "url": "https://mdpi.com/1996-1073/14/4/1188",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s2",
+      "kind": "press",
+      "title": "Clean Energy Wire: Germany's tenant electricity scheme leaves vast solar PV potential untapped",
+      "url": "https://cleanenergywire.org/news/germanys-tenant-electricity-scheme-leaves-vast-solar-pv-potential-untapped-report",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s3",
+      "kind": "public",
+      "title": "Ecologic: Evaluation Mieterstrom Berlin (StromNachbarn)",
+      "url": "https://www.ecologic.eu/sites/default/files/publication/2021/30005-Evaluation-Mieterstrom-StromNachbarn.pdf",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s4",
+      "kind": "press",
+      "title": "Munich Startup: Ampeers Energy is reorganizing",
+      "url": "https://www.munich-startup.de/en/116451/ampeers-energy-is-reorganizing/",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+}

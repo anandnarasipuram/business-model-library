@@ -1,0 +1,127 @@
+{
+  "id": "submetering-metering-service",
+  "name": "Submetering and billing service for landlords",
+  "aliases": [
+    "heat cost allocation",
+    "remote meter reading service",
+    "Ablesedienst"
+  ],
+  "archetype": "submetering",
+  "sector": "energy+iot",
+  "summary": "A provider installs radio meters in every unit, reads them remotely and prepares consumption-based heating and water billing for landlords and property managers.",
+  "how_it_makes_money": "Service fees for metering devices, remote reading, data validation and billing. Exact fee structures are not in the sources and should be added.",
+  "building_blocks": {
+    "hardware": [
+      "Wireless meters and heat cost allocators",
+      "Collection points in buildings"
+    ],
+    "software": [
+      "Meter data management system",
+      "Billing engine",
+      "Resident and landlord portals"
+    ],
+    "sites_assets": [
+      "Multi-family buildings and commercial units"
+    ],
+    "partners": [
+      "Housing companies and property managers"
+    ],
+    "regulation": [
+      "Heating cost ordinance and national billing and remote-reading rules"
+    ],
+    "financing": [
+      "Provider-owned or service-rented devices (to confirm)"
+    ],
+    "channel": [
+      "Direct sales to housing companies"
+    ],
+    "data": [
+      "Meter readings",
+      "Consumption profiles"
+    ]
+  },
+  "stakeholder_value": {
+    "customer": "Landlord: compliant billing without on-site visits",
+    "provider": "Recurring service revenue with high switching effort for customers"
+  },
+  "what_must_be_true": [
+    "Regulation requires consumption-based billing and remote reading",
+    "Providers reach high remote-reading rates",
+    "Landlords stay with their provider"
+  ],
+  "risks_failure_causes": [
+    {
+      "tag": "competition_scrutiny",
+      "text": "The Bundeskartellamt examined the market, which is dominated by a few large players",
+      "evidence": "documented"
+    },
+    {
+      "tag": "billing_errors",
+      "text": "Customers report misread radio meters and weak support when billing is wrong",
+      "evidence": "inferred"
+    }
+  ],
+  "evidence": "documented",
+  "outcome": "successful",
+  "cases": [
+    {
+      "company": "Ista and Techem",
+      "market": "DE",
+      "period": "ongoing",
+      "outcome": "successful",
+      "evidence": "documented",
+      "note": "According to the Bundeskartellamt the two share 50 to 60 percent of the German market. Techem serves more than 13 million apartments and reports about 85 percent wireless reading.",
+      "source_ids": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    }
+  ],
+  "parameters": [],
+  "match": {
+    "segments": [
+      "mfh",
+      "commercial"
+    ],
+    "domains": [
+      "heating",
+      "general"
+    ],
+    "customer_capex": "low",
+    "needs": {
+      "provider_financing": true,
+      "measurable_savings": false,
+      "installer_network": true,
+      "own_hardware": true,
+      "smart_meter": false
+    }
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "press",
+      "title": "CIO: Die Macht der Ablesefirmen",
+      "url": "https://www.cio.de/a/die-macht-der-ablesefirmen,3591638",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s2",
+      "kind": "public",
+      "title": "CB Insights: Techem company profile",
+      "url": "https://www.cbinsights.com/company/techem",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s3",
+      "kind": "public",
+      "title": "Techem: Our solutions",
+      "url": "https://www.techem.com/corp/en/about-us/solutions",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+}

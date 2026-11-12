@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+.DS_Store
+.streamlit/secrets.toml
+
+build/
+.DS_Store
+.env
+__pycache__/
+private_entries/

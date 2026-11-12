@@ -1,0 +1,126 @@
+{
+  "id": "heat-contracting-waermelieferung",
+  "name": "Heat contracting (Wärmelieferung) in rented buildings",
+  "aliases": [
+    "Wärme-Contracting",
+    "commercial heat supply"
+  ],
+  "archetype": "other",
+  "sector": "energy",
+  "summary": "A landlord outsources heat generation and supply to a contractor who installs, runs and maintains the heating plant; the cost is passed on to tenants through heating bills.",
+  "how_it_makes_money": "The contractor sells heat at a price formula agreed with the landlord. Capital costs and profit are included in the price that tenants end up paying.",
+  "building_blocks": {
+    "hardware": [
+      "Heating plant, often continuing to run the existing gas boiler"
+    ],
+    "software": [
+      "Metering and billing"
+    ],
+    "sites_assets": [
+      "Multi-family rental buildings"
+    ],
+    "partners": [
+      "Landlords and housing companies",
+      "Contractor subsidiaries of landlords"
+    ],
+    "regulation": [
+      "Section 556c BGB cost-neutrality rule",
+      "Heat supply ordinance (WärmeLV)"
+    ],
+    "financing": [
+      "Contractor finances installations"
+    ],
+    "channel": [
+      "Large housing companies"
+    ],
+    "data": [
+      "Heat consumption and price formulas"
+    ]
+  },
+  "stakeholder_value": {
+    "customer": "Landlord: no investment and less risk; tenants: not clearly better off",
+    "provider": "Long-term heat supply revenue"
+  },
+  "what_must_be_true": [
+    "Price formulas hold up legally",
+    "Cost neutrality for tenants can be shown or avoided",
+    "Landlord-contractor relationships stay acceptable to regulators and tenants"
+  ],
+  "risks_failure_causes": [
+    {
+      "tag": "tenant_cost_increase",
+      "text": "Journalists and tenant groups report that price formulas are factually wrong, ineffective or contested and tenant costs rise",
+      "evidence": "documented"
+    },
+    {
+      "tag": "regulatory_tightening",
+      "text": "The German Tenants' Association demands binding rules and a price cap for heat supply contracts in rented buildings",
+      "evidence": "documented"
+    },
+    {
+      "tag": "split_incentive_misuse",
+      "text": "Contractors that are subsidiaries of the landlord weaken the efficiency incentive; often the old gas boiler simply keeps running",
+      "evidence": "documented"
+    }
+  ],
+  "evidence": "documented",
+  "outcome": "successful",
+  "cases": [
+    {
+      "company": "German housing market",
+      "market": "DE",
+      "period": "since 1990s",
+      "outcome": "successful",
+      "evidence": "documented",
+      "note": "Around four million apartments are supplied under contracting contracts according to industry figures, but how many benefit financially is questioned. Consumer groups estimate at least hundreds of thousands of tenants pay too much.",
+      "source_ids": [
+        "s1",
+        "s2"
+      ]
+    }
+  ],
+  "parameters": [],
+  "match": {
+    "segments": [
+      "mfh"
+    ],
+    "domains": [
+      "heating"
+    ],
+    "customer_capex": "none",
+    "needs": {
+      "provider_financing": true,
+      "measurable_savings": false,
+      "installer_network": true,
+      "own_hardware": true,
+      "smart_meter": false
+    }
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "press",
+      "title": "Utopia: Hunderttausende Mieter zahlen zu hohe Heizkosten (Correctiv research)",
+      "url": "https://utopia.de/news/abzocke-hunderttausende-mieterinnen-zahlen-zu-hohe-heizkosten_749404/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s2",
+      "kind": "public",
+      "title": "Berliner Mieterverein: Wärmecontracting",
+      "url": "https://www.berliner-mieterverein.de/magazin/online/mm0425/contracting.htm",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s3",
+      "kind": "public",
+      "title": "Deutscher Mieterbund: Forderungspapier Wärmelieferung (Aug 2025)",
+      "url": "https://mieterbund.de/app/uploads/2025/08/DMB-WaermeLV_Forderungspapier_070825.pdf",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+}

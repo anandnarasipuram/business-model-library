@@ -1,0 +1,179 @@
+{
+  "id": "vpp-home-battery-revenue-share",
+  "name": "Virtual power plant with revenue share for home batteries",
+  "aliases": [
+    "VPP",
+    "flexibility aggregation",
+    "sonnenFlat model"
+  ],
+  "archetype": "flexibility_revenue_share",
+  "sector": "energy+iot",
+  "summary": "An aggregator pools many home batteries (and other flexible devices) into one controllable resource, sells grid services and market products, and shares part of the proceeds with owners.",
+  "how_it_makes_money": "Revenue from grid services and energy trading, minus the share paid to asset owners and platform costs; the hardware seller can also earn on the battery sale or an electricity contract.",
+  "building_blocks": {
+    "hardware": [
+      "Home batteries or other flexible assets with remote control"
+    ],
+    "software": [
+      "Aggregation and dispatch platform",
+      "Market access and trading interface"
+    ],
+    "sites_assets": [
+      "Thousands of distributed assets in customer homes"
+    ],
+    "partners": [
+      "Grid operators",
+      "Trading partner or market access provider",
+      "Hardware manufacturer"
+    ],
+    "regulation": [
+      "Prequalification for balancing and reserve markets",
+      "Metering and data access rules"
+    ],
+    "financing": [
+      "Hardware financed by customer, provider or a bundled contract"
+    ],
+    "channel": [
+      "Bundled with battery sale and electricity contract"
+    ],
+    "data": [
+      "Asset state and meter data",
+      "Market prices"
+    ]
+  },
+  "stakeholder_value": {
+    "customer": "Share of VPP proceeds, often via an electricity contract",
+    "provider": "Platform and trading revenue",
+    "partner": "Trading and market access fees",
+    "other": "Grid operators get flexibility"
+  },
+  "what_must_be_true": [
+    "Enough assets are pooled to qualify for market products",
+    "Market prices leave a margin after the owner share and platform cost",
+    "Customers keep their devices online and allow remote control",
+    "Rules allow small assets to participate"
+  ],
+  "risks_failure_causes": [
+    {
+      "tag": "thin_revenue_per_asset",
+      "text": "Per-household revenue figures in public sources are small and vary widely, from tens to a few hundred euros per year",
+      "evidence": "assumed"
+    },
+    {
+      "tag": "market_dependence",
+      "text": "Revenue depends on market prices and product rules that can change",
+      "evidence": "inferred"
+    },
+    {
+      "tag": "connectivity",
+      "text": "Requires reliable internet connection and compatible hardware",
+      "evidence": "documented"
+    },
+    {
+      "tag": "provider_insolvency",
+      "text": "The pioneer aggregator sonnen filed for insolvency in October 2026, two months after Shell sold it; services for customers continue",
+      "evidence": "documented"
+    }
+  ],
+  "evidence": "documented",
+  "outcome": "unproven",
+  "cases": [
+    {
+      "company": "sonnen",
+      "market": "DE",
+      "period": "2019 onwards",
+      "outcome": "pivoted",
+      "evidence": "documented",
+      "note": "Launched SonnenFlat in 2019 sharing VPP proceeds with owners. By 2023 its VPP had 250 MWh with a target of 1 GWh in the following years, providing frequency containment reserve and exchange trading.",
+      "source_ids": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "company": "sonnen and Next Kraftwerke",
+      "market": "DE",
+      "period": "TransnetBW project",
+      "outcome": "successful",
+      "evidence": "documented",
+      "note": "Sonnen handles the connection of storage units while marketing and activation of reserve are done through Next Kraftwerke.",
+      "source_ids": [
+        "s3"
+      ]
+    },
+    {
+      "company": "sonnen (2026)",
+      "market": "DE",
+      "period": "Aug-Oct 2026",
+      "outcome": "failed",
+      "evidence": "documented",
+      "note": "Sold by Shell to investor TIVEN in August 2026 and filed for insolvency about two months later, as reported by Handelsblatt via energy-storage.news. Cost cuts did not reach targets. The VPP business of the company was an early mover and customer services continue. The cause is not stated beyond that.",
+      "source_ids": [
+        "s4"
+      ]
+    }
+  ],
+  "parameters": [
+    {
+      "key": "revenue_per_asset_year",
+      "label": "Gross flexibility revenue per asset per year",
+      "unit": "EUR",
+      "default": 150,
+      "low": 50,
+      "high": 300,
+      "evidence": "assumed"
+    }
+  ],
+  "match": {
+    "segments": [
+      "sfh",
+      "commercial"
+    ],
+    "customer_capex": "high",
+    "needs": {
+      "provider_financing": false,
+      "measurable_savings": false,
+      "installer_network": false,
+      "own_hardware": true,
+      "smart_meter": true
+    },
+    "domains": [
+      "flexibility",
+      "electricity"
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "press",
+      "title": "pv magazine: sonnen household battery owners offered revenue from grid balancing services (2019)",
+      "url": "https://www.pv-magazine.com/2019/11/21/sonnen-household-battery-owners-offered-revenue-from-grid-balancing-services",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s2",
+      "kind": "press",
+      "title": "sonnen press release: Europe's largest VPP (17 Aug 2023)",
+      "url": "https://sonnengroup.com/press/europes-largest-vpp/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s3",
+      "kind": "press",
+      "title": "ZfK: TransnetBW nimmt virtuelles Kraftwerk in Betrieb",
+      "url": "https://www.zfk.de/unternehmen/nachrichten/transnetbw-nimmt-virtuelles-kraftwerk-in-betrieb",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s4",
+      "kind": "press",
+      "title": "energy-storage.news: Sonnen files for insolvency in Germany two months after Shell offloading",
+      "url": "https://www.energy-storage.news/sonnen-files-for-insolvency-in-germany-two-months-after-shell-offloading/",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+}

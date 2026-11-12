@@ -1,0 +1,152 @@
+{
+  "id": "dynamic-tariff-hardware-bundle",
+  "name": "Dynamic tariff bundled with devices or smart metering",
+  "aliases": [
+    "dynamic tariff plus hardware",
+    "smart tariff bundle"
+  ],
+  "archetype": "tariff_bundle",
+  "sector": "energy+iot",
+  "summary": "A supplier sells hourly-priced electricity and bundles it with devices (smart meter bridge, wallbox, heat pump or battery installation) and an app that shifts consumption to cheap hours.",
+  "how_it_makes_money": "Supply margin and service fees from the electricity contract; devices and installation are sold or discounted to win customers who can use dynamic prices.",
+  "building_blocks": {
+    "hardware": [
+      "Smart meter or meter reader bridge",
+      "Wallbox, battery or heat pump (optional bundle)"
+    ],
+    "software": [
+      "Consumer app",
+      "Price forecast and automation"
+    ],
+    "sites_assets": [
+      "Customer homes with controllable loads"
+    ],
+    "partners": [
+      "Meter operators",
+      "Installers",
+      "Device makers"
+    ],
+    "regulation": [
+      "Smart meter rollout rules",
+      "Supplier obligations for dynamic tariffs"
+    ],
+    "financing": [
+      "Device subsidies funded from expected supply margin"
+    ],
+    "channel": [
+      "Direct digital sales, comparison, partner referrals"
+    ],
+    "data": [
+      "Quarter-hourly or hourly consumption",
+      "Day-ahead prices"
+    ]
+  },
+  "stakeholder_value": {
+    "customer": "Lower cost if load is shifted",
+    "provider": "Customer base and supply margin",
+    "other": "Grid benefits from shifted load"
+  },
+  "what_must_be_true": [
+    "Customers have a smart meter or a bridge device",
+    "Customers own loads they can shift",
+    "Supplier can price and hedge dynamic supply",
+    "Customer acquisition cost stays below lifetime margin"
+  ],
+  "risks_failure_causes": [
+    {
+      "tag": "smart_meter_bottleneck",
+      "text": "Smart meter coverage gates how many customers can take the tariff",
+      "evidence": "documented"
+    },
+    {
+      "tag": "price_risk",
+      "text": "Customers carry month-to-month price variability, which can put off households",
+      "evidence": "inferred"
+    },
+    {
+      "tag": "edge_cases",
+      "text": "Customers without working connectivity or meters cannot be served",
+      "evidence": "inferred"
+    }
+  ],
+  "evidence": "inferred",
+  "outcome": "unproven",
+  "cases": [
+    {
+      "company": "Tibber",
+      "market": "DE, NL, Nordics",
+      "period": "ongoing",
+      "outcome": "unproven",
+      "evidence": "documented",
+      "note": "Offers a bridge reader (Tibber Pulse) for digital meters so customers can use dynamic prices without a smart meter, and offers wallbox purchase with installation.",
+      "source_ids": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "company": "Octopus Energy",
+      "market": "UK, DE",
+      "period": "ongoing",
+      "outcome": "unproven",
+      "evidence": "documented",
+      "note": "Some especially cheap smart tariffs are bundled with installation of a heat pump, battery or solar. Octopus, Tibber and Rabot started a smart meter initiative in Germany.",
+      "source_ids": [
+        "s3",
+        "s4"
+      ]
+    }
+  ],
+  "parameters": [],
+  "match": {
+    "segments": [
+      "sfh"
+    ],
+    "customer_capex": "low",
+    "needs": {
+      "provider_financing": false,
+      "measurable_savings": false,
+      "installer_network": false,
+      "own_hardware": true,
+      "smart_meter": true
+    },
+    "domains": [
+      "electricity",
+      "flexibility"
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "public",
+      "title": "RESET: Consume energy when it's cheap and green with dynamic electricity tariffs",
+      "url": "https://en.reset.org/consume-energy-when-it-is-cheap-with-dynamic-electricity-tariffs/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s2",
+      "kind": "press",
+      "title": "homeandsmart: Vorteile der dynamischen Tarife von tibber",
+      "url": "https://www.homeandsmart.de/?p=54108",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s3",
+      "kind": "public",
+      "title": "Net Zero Home UK: smart tariffs",
+      "url": "https://www.netzerohome.uk/smart-tariffs",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s4",
+      "kind": "public",
+      "title": "Ostrom: Smart Meter Initiative",
+      "url": "https://www.ostrom.de/en/smart-meter-initiative",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+}

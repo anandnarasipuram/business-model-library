@@ -2,5 +2,6 @@ streamlit
 pandas
 plotly
 python-dotenv
+requests
 anthropic
 openai

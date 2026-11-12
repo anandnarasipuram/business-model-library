@@ -1,0 +1,136 @@
+{
+  "id": "epc-shared-savings",
+  "name": "Energy performance contract: shared savings",
+  "aliases": [
+    "EPC shared savings",
+    "ESCO shared savings"
+  ],
+  "archetype": "shared_savings",
+  "sector": "energy",
+  "summary": "The ESCO finances and delivers the project and is repaid with an agreed share of the energy savings over a fixed period. The ESCO carries financing and performance risk.",
+  "how_it_makes_money": "Pre-agreed percentage of verified savings for a fixed number of years; a larger share goes to the ESCO because of the up-front investment.",
+  "building_blocks": {
+    "hardware": [
+      "Efficiency measures installed by the ESCO"
+    ],
+    "software": [
+      "Monitoring and verification tooling"
+    ],
+    "sites_assets": [
+      "Customer buildings or facilities"
+    ],
+    "partners": [
+      "Lenders to the ESCO",
+      "Contractors"
+    ],
+    "regulation": [
+      "Accounting treatment of the contract (on or off balance sheet)",
+      "Public procurement rules"
+    ],
+    "financing": [
+      "ESCO funds the project from its own funds or loans and carries credit risk"
+    ],
+    "channel": [
+      "Direct and tender-based sales"
+    ],
+    "data": [
+      "Baseline",
+      "Metered consumption for savings measurement"
+    ]
+  },
+  "stakeholder_value": {
+    "customer": "No up-front investment; pays out of savings",
+    "provider": "Share of savings over the term",
+    "other": "Lenders to the ESCO bear credit risk"
+  },
+  "what_must_be_true": [
+    "Savings can be measured credibly and customers do not contest them",
+    "Savings are large enough to repay the ESCO's investment within the term",
+    "ESCO has access to financing",
+    "Customer accepts a larger savings share going to the provider"
+  ],
+  "risks_failure_causes": [
+    {
+      "tag": "owner_incentive_to_dispute",
+      "text": "Owners have an incentive to challenge measured savings to reduce payments",
+      "evidence": "documented"
+    },
+    {
+      "tag": "financing_burden",
+      "text": "ESCO-financed projects are more expensive and less capital efficient for the provider",
+      "evidence": "documented"
+    },
+    {
+      "tag": "complexity",
+      "text": "More complex contracts than guaranteed savings; accounting treatment issues",
+      "evidence": "documented"
+    }
+  ],
+  "evidence": "documented",
+  "outcome": "niche",
+  "cases": [
+    {
+      "company": "Japan and Philippines ESCO markets",
+      "market": "JP, PH",
+      "period": "ongoing",
+      "outcome": "successful",
+      "evidence": "documented",
+      "note": "Shared savings is used in over 75 percent of contracts according to the IEA.",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "company": "European markets",
+      "market": "EU",
+      "period": "ongoing",
+      "outcome": "niche",
+      "evidence": "documented",
+      "note": "Guaranteed savings is more common in Europe than shared savings. A 2013 US state document notes that shared savings is rarely favored by owners.",
+      "source_ids": [
+        "s1",
+        "s2"
+      ]
+    }
+  ],
+  "parameters": [],
+  "match": {
+    "segments": [
+      "mfh",
+      "commercial",
+      "public",
+      "industrial"
+    ],
+    "customer_capex": "none",
+    "needs": {
+      "provider_financing": true,
+      "measurable_savings": true,
+      "installer_network": false,
+      "own_hardware": false,
+      "smart_meter": false
+    },
+    "domains": [
+      "general"
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "public",
+      "title": "IEA: Energy performance contract models",
+      "url": "https://www.iea.org/reports/energy-service-companies-escos-2/esco-contracts",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s2",
+      "kind": "public",
+      "title": "Hawaii State Energy Office: Pros and cons of guaranteed vs shared energy savings (2013)",
+      "url": "https://energy.hawaii.gov/wp-content/uploads/2012/06/Pros-and-Cons-of-guaranteed-vs.-shared-energy-savings-2013.pdf",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+}
