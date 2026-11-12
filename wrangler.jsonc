@@ -1,0 +1,11 @@
+{
+  "name": "business-model-library",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./site",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": { "COHERE_MODEL": "command-a-plus-05-2026" }
+}

@@ -1,0 +1,183 @@
+{
+  "id": "heat-pump-rental-subscription",
+  "name": "Heat pump rental or subscription",
+  "aliases": [
+    "heat pump as a service",
+    "heat pump leasing",
+    "Heat Pumps on Subscription (HPoS)"
+  ],
+  "archetype": "rental_leasing",
+  "sector": "energy+iot",
+  "summary": "The provider owns or finances the heat pump and the customer pays a fixed monthly fee instead of buying it. Variants range from pure rental to subscription with maintenance.",
+  "how_it_makes_money": "Monthly fee over a multi-year term that recovers equipment, installation and financing cost plus margin; service and maintenance may be bundled.",
+  "building_blocks": {
+    "hardware": [
+      "Heat pump",
+      "Installation work"
+    ],
+    "software": [
+      "Contract and billing system",
+      "Remote monitoring (optional)"
+    ],
+    "sites_assets": [
+      "Customer buildings (homes, or rented commercial and public buildings)"
+    ],
+    "partners": [
+      "Installers",
+      "Equipment manufacturer",
+      "Financing partner"
+    ],
+    "regulation": [
+      "Consumer-protection rules for long contracts",
+      "Subsidy rules (differ for rented vs owned equipment)"
+    ],
+    "financing": [
+      "Provider or investor funds the equipment up front and recovers it through fees"
+    ],
+    "channel": [
+      "Direct, installer-led, or via manufacturer"
+    ],
+    "data": [
+      "Operating data to support service and performance claims"
+    ]
+  },
+  "stakeholder_value": {
+    "customer": "No upfront cost, predictable monthly payment",
+    "provider": "Recurring fee stream",
+    "partner": "Installation and service work",
+    "other": "Landlord-tenant split incentive can be resolved by a third-party owner (HP SUBSCRIBE rationale)"
+  },
+  "what_must_be_true": [
+    "Provider can fund equipment cheaply enough that the fee over the term stays acceptable to customers",
+    "Customers accept a long contract",
+    "Fee is not seen as much more expensive than buying",
+    "Service costs over the term are controlled"
+  ],
+  "risks_failure_causes": [
+    {
+      "tag": "price_perception",
+      "text": "Competitors argue customers pay many times the equipment value over a long rental term; this perception can undermine uptake (claim by a competitor, not independent evidence)",
+      "evidence": "inferred"
+    },
+    {
+      "tag": "financing_cost",
+      "text": "Cost of capital and long payback on provider-owned equipment can make the fee uncompetitive against instalment purchase",
+      "evidence": "inferred"
+    },
+    {
+      "tag": "lock_in_aversion",
+      "text": "Customers dislike being locked into long-term contracts",
+      "evidence": "inferred"
+    }
+  ],
+  "evidence": "inferred",
+  "outcome": "unproven",
+  "cases": [
+    {
+      "company": "Thermondo (with LG)",
+      "market": "DE",
+      "period": "2023 announcement, 2025 financing offer",
+      "outcome": "pivoted",
+      "evidence": "inferred",
+      "note": "In 2023 a rental at a fixed monthly price was announced with a target of about 10,000 installs. In 2025 Thermondo raised EUR 50M for an instalment purchase model where customers own the heat pump from the start. The sources do not state why or whether rental stopped.",
+      "source_ids": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "company": "1KOMMA5°",
+      "market": "DE",
+      "period": "2026",
+      "outcome": "unproven",
+      "evidence": "documented",
+      "note": "Positions an instalment purchase (5.99 percent financing) against rental and leasing and criticises long rental contracts. This is a competitor's marketing position.",
+      "source_ids": [
+        "s3"
+      ]
+    },
+    {
+      "company": "Aira",
+      "market": "SE, UK",
+      "period": "founded 2022",
+      "outcome": "unproven",
+      "evidence": "documented",
+      "note": "Subscription that spreads the heat pump cost over monthly repayments; customers typically choose to pay back over 10 years.",
+      "source_ids": [
+        "s4"
+      ]
+    },
+    {
+      "company": "HP SUBSCRIBE (EU project)",
+      "market": "FR, AT, GR (pilots), IE",
+      "period": "2025-2026",
+      "outcome": "unproven",
+      "evidence": "documented",
+      "note": "EU-funded pilots of a subscription model for rented commercial and public buildings, aimed at the landlord-tenant split incentive. The project describes itself as laying foundations, not as having completed results.",
+      "source_ids": [
+        "s5"
+      ]
+    }
+  ],
+  "parameters": [],
+  "match": {
+    "segments": [
+      "sfh",
+      "mfh",
+      "commercial",
+      "public"
+    ],
+    "customer_capex": "none",
+    "needs": {
+      "provider_financing": true,
+      "measurable_savings": false,
+      "installer_network": true,
+      "own_hardware": true,
+      "smart_meter": false
+    },
+    "domains": [
+      "heating"
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "press",
+      "title": "Coolingpost: German company to offer heat pump rentals",
+      "url": "https://www.coolingpost.com/world-news/german-company-to-offer-heat-pump-rentals/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s2",
+      "kind": "press",
+      "title": "tech.eu: thermondo secures EUR 50M to expand heat pump financing across Germany",
+      "url": "https://tech.eu/2025/07/18/thermondo-secures-eur50m-to-expand-heat-pump-financing-across-germany/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s3",
+      "kind": "press",
+      "title": "1KOMMA5° press release, 17 June 2026",
+      "url": "https://1komma5.com/en/press/press-releases/1komma5-mobilizes-euro1-billion-for-residential-heat-pumps-batteries-and-solar-systems/",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s4",
+      "kind": "press",
+      "title": "inkl: Swedish Spotify of heat pumps hopes to reach more UK homes",
+      "url": "https://www.inkl.com/news/swedish-spotify-of-heat-pumps-hopes-to-reach-more-uk-homes",
+      "accessed": "2026-11-12"
+    },
+    {
+      "id": "s5",
+      "kind": "public",
+      "title": "EU BUILD UP: Heat Pumps on Subscription (HP SUBSCRIBE)",
+      "url": "https://build-up.ec.europa.eu/de/node/69216",
+      "accessed": "2026-11-12"
+    }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-12",
+  "status": "draft"
+}

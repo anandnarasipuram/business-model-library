@@ -30,6 +30,18 @@
   .block { border:1px solid var(--line); border-radius:8px; padding:8px 10px; }
   .block b { font-size:.8rem; color:var(--muted); display:block; }
   .none { color:var(--muted); }
+  #ask-btn { position:fixed; right:16px; bottom:16px; z-index:20; padding:10px 16px; border:0; border-radius:999px; background:var(--accent); color:#fff; font:600 14px "DM Sans",system-ui,sans-serif; cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.25); }
+  #ask-panel { position:fixed; right:16px; bottom:64px; z-index:20; width:min(380px,calc(100vw - 32px)); max-height:70vh; display:none; flex-direction:column; background:var(--bg); border:1px solid var(--line); border-radius:14px; box-shadow:0 8px 28px rgba(0,0,0,.3); }
+  #ask-panel.open { display:flex; }
+  #ask-head { padding:10px 14px; border-bottom:1px solid var(--line); font-weight:600; display:flex; justify-content:space-between; }
+  #ask-head button { background:none; border:0; color:var(--muted); font-size:18px; cursor:pointer; }
+  #ask-log { padding:12px 14px; overflow-y:auto; flex:1; font-size:.92rem; }
+  .msg { margin:0 0 10px; white-space:pre-wrap; }
+  .msg.user { color:var(--muted); }
+  .msg a { color:var(--accent); cursor:pointer; text-decoration:underline; }
+  #ask-form { display:flex; gap:6px; padding:10px; border-top:1px solid var(--line); }
+  #ask-form input { flex:1; padding:9px 10px; font:inherit; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--fg); }
+  #ask-form button { padding:9px 12px; border:0; border-radius:8px; background:var(--accent); color:#fff; font:inherit; cursor:pointer; }
   footer { color:var(--muted); font-size:.85rem; margin-top:30px; }
 </style>
 </head>
@@ -44,6 +56,12 @@
     <select id="evidence"><option value="">All evidence levels</option></select>
   </div>
   <div id="list"></div>
+  <button id="ask-btn" aria-expanded="false" aria-controls="ask-panel">Ask AI</button>
+  <div id="ask-panel" role="dialog" aria-label="Ask AI">
+    <div id="ask-head"><span>Ask the library</span><button id="ask-close" aria-label="Close">&times;</button></div>
+    <div id="ask-log"><p class="msg">Ask about a business model or describe a use case. Answers come only from the entries in this library.</p></div>
+    <form id="ask-form"><input id="ask-input" maxlength="500" placeholder="e.g. Why did heat pump rental struggle?" autocomplete="off"><button>Send</button></form>
+  </div>
   <footer>Draft. Evidence levels: documented, inferred, assumed, speculative. Outcome is shown separately from evidence.</footer>
 </main>
 <script>
@@ -83,7 +101,7 @@ function card(x) {
     `<li><b>${esc(c.company)}</b> (${esc(c.market)}, ${esc(c.period)}): ${esc(c.note)} <span class="tag ev-${esc(c.evidence)}">${esc(c.evidence)}</span></li>`).join("");
   const sources = x.sources.map((s) =>
     `<li>[${esc(s.id)}] ${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title)}</a>` : esc(s.title)} <span class="tag">${label(s.kind)}</span></li>`).join("");
-  return `<div class="card">
+  return `<div class="card" data-id="${esc(x.id)}">
     <h2>${esc(x.name)}</h2>
     <div class="tags">
       <span class="tag">${label(x.archetype)}</span>
@@ -110,6 +128,54 @@ fetch("entries.json").then((r) => r.json()).then((data) => {
   fillSelect("evidence", data.map((x) => x.evidence));
   ["q", "archetype", "outcome", "evidence"].forEach((id) => $(id).addEventListener("input", render));
   render();
+});
+
+function openEntry(id) {
+  ["q", "archetype", "outcome", "evidence"].forEach((k) => ($(k).value = ""));
+  render();
+  const c = document.querySelector(`.card[data-id="${CSS.escape(id)}"]`);
+  if (c) { c.classList.add("open"); c.scrollIntoView({ behavior: "smooth", block: "start" }); }
+}
+
+function addMsg(text, cls, linkify) {
+  const p = document.createElement("p");
+  p.className = "msg " + cls;
+  if (linkify) {
+    p.innerHTML = esc(text).replace(/\[([a-z0-9-]+)\]/g, (m, id) => {
+      const e = entries.find((x) => x.id === id);
+      return e ? `<a data-open="${esc(id)}">${esc(e.name)}</a>` : "";
+    });
+    p.querySelectorAll("a[data-open]").forEach((a) => a.addEventListener("click", () => openEntry(a.dataset.open)));
+  } else {
+    p.textContent = text;
+  }
+  $("ask-log").appendChild(p);
+  $("ask-log").scrollTop = $("ask-log").scrollHeight;
+  return p;
+}
+
+$("ask-btn").addEventListener("click", () => {
+  const open = $("ask-panel").classList.toggle("open");
+  $("ask-btn").setAttribute("aria-expanded", open);
+  if (open) $("ask-input").focus();
+});
+$("ask-close").addEventListener("click", () => { $("ask-panel").classList.remove("open"); $("ask-btn").setAttribute("aria-expanded", "false"); });
+$("ask-form").addEventListener("submit", async (ev) => {
+  ev.preventDefault();
+  const q = $("ask-input").value.trim();
+  if (!q) return;
+  $("ask-input").value = "";
+  addMsg(q, "user");
+  const wait = addMsg("Thinking...", "bot");
+  try {
+    const r = await fetch("/api/ask", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ question: q }) });
+    const d = await r.json();
+    wait.remove();
+    addMsg(r.ok ? d.answer : (d.error || "Something went wrong."), "bot", r.ok);
+  } catch {
+    wait.remove();
+    addMsg("Ask-AI is not reachable right now.", "bot");
+  }
 });
 </script>
 </body>

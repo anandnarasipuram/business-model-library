@@ -21,6 +21,7 @@ One JSON file per business model in `entries/`. Same schema for the public and t
 | `outcome` | yes | `successful`, `failed`, `pivoted`, `unproven`, `niche` (outcome is separate from evidence) |
 | `cases` | no | Real-world instances: `company`, `market`, `period`, `outcome`, `evidence`, `note`, `source_ids` |
 | `parameters` | no | Inputs the simulation engine will use later: `key`, `label`, `unit`, `default`, `low`, `high`, `evidence` |
+| `match` | yes | Matching data: `segments`, `domains` (heating, electricity, flexibility, mobility, general), `customer_capex` (none, low, high = what the customer must pay upfront) and `needs` (provider_financing, measurable_savings, installer_network, own_hardware, smart_meter) |
 | `sources` | yes | List of `{id, kind, title, url, accessed}`. `kind` is `public`, `first_hand` or `press` |
 | `last_verified` | yes | ISO date |
 | `status` | yes | `draft`, `reviewed` |
