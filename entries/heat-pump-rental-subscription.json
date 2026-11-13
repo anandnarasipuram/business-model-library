@@ -68,6 +68,14 @@
       "tag": "lock_in_aversion",
       "text": "Customers dislike being locked into long-term contracts",
       "evidence": "inferred"
+    },
+    {
+      "tag": "unit_margin_kpi",
+      "text": "Success measures based on product margin can kill rental or as-a-service projects: such offers earn less margin early but more over a longer lifetime (a consultancy's general view on circular and as-a-service models, not energy-specific)",
+      "evidence": "inferred",
+      "source_ids": [
+        "s6"
+      ]
     }
   ],
   "evidence": "inferred",
@@ -174,10 +182,17 @@
       "title": "EU BUILD UP: Heat Pumps on Subscription (HP SUBSCRIBE)",
       "url": "https://build-up.ec.europa.eu/de/node/69216",
       "accessed": "2026-11-12"
+    },
+    {
+      "id": "s6",
+      "kind": "public",
+      "title": "Seconds Innovation: Managing the path forward, six insights on business models for the circular economy",
+      "url": "https://www.seconds-innovation.com/insights/managing-the-path-forward-six-insights-on-developing-business-models-for-the-circular-economy",
+      "accessed": "2026-11-13"
     }
   ],
   "visibility": "public",
   "perspective": "product_company",
-  "last_verified": "2026-11-12",
+  "last_verified": "2026-11-13",
   "status": "draft"
 }

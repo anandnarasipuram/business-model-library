@@ -1,0 +1,154 @@
+{
+  "id": "ev-battery-recycling-circular",
+  "name": "EV battery recycling and circular materials",
+  "aliases": [
+    "battery recycling",
+    "circular battery economy"
+  ],
+  "archetype": "other",
+  "sector": "energy",
+  "summary": "Industrial companies use metallurgy skills to recover materials and make battery components from used EV batteries, usually through joint ventures. Two consultancy case summaries describe early-stage efforts. Neither gives revenue or profit figures.",
+  "how_it_makes_money": "Not disclosed in the sources. Assumption: sale of recovered materials or battery components, possibly plus fees for taking back batteries. One case page mentions an as-a-service offer that bundles maintenance and recycling, with no prices.",
+  "building_blocks": {
+    "hardware": [
+      "Pilot recycling plant (under construction at the nuclear-technology group, per the source)",
+      "Production facilities for battery components (joint ventures in northern France)"
+    ],
+    "software": [],
+    "sites_assets": [
+      "Recycling and production sites"
+    ],
+    "partners": [
+      "Joint-venture partners",
+      "Ecosystem partners along the supply chain"
+    ],
+    "regulation": [
+      "Regulatory hurdles are named as a source of uncertainty"
+    ],
+    "financing": [
+      "Investment decisions staged over time against market readiness"
+    ],
+    "channel": [],
+    "data": [
+      "Assumptions about battery return volumes drove the financial projections"
+    ]
+  },
+  "stakeholder_value": {
+    "customer": "",
+    "provider": "New business line using existing metallurgy skills",
+    "partner": "Roles in a shared ecosystem or joint venture",
+    "other": "Material loops reduce resource dependency"
+  },
+  "what_must_be_true": [
+    "Enough used-battery input volume (the source calls volumes uncertain)",
+    "Partner roles in the ecosystem are agreed; existing partnerships can block entry in some regions",
+    "Regulation settles in a workable way",
+    "Investment is staged against market development"
+  ],
+  "risks_failure_causes": [
+    {
+      "tag": "input_volume_uncertainty",
+      "text": "Return volumes of used batteries are uncertain",
+      "evidence": "documented",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "tag": "long_timelines",
+      "text": "Longer timelines than typical product launches",
+      "evidence": "documented",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "tag": "regulatory_hurdles",
+      "text": "Regulatory hurdles add uncertainty",
+      "evidence": "documented",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "tag": "partner_dependence",
+      "text": "Existing partnerships blocked entry in some regions, so the group narrowed its focus to domestic opportunities",
+      "evidence": "documented",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "tag": "unclear_commercial_path",
+      "text": "Technical feasibility was confirmed but target customers, regions and value-chain position were still unclear",
+      "evidence": "documented",
+      "source_ids": [
+        "s1"
+      ]
+    }
+  ],
+  "evidence": "assumed",
+  "outcome": "unproven",
+  "cases": [
+    {
+      "company": "Unnamed French nuclear-technology group",
+      "market": "FR",
+      "period": "three-year project, dates not stated",
+      "outcome": "unproven",
+      "evidence": "documented",
+      "note": "Joint ventures for battery components in northern France were started and a pilot recycling plant is under development. No commercial results reported.",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "company": "Unnamed global refractory-products supplier",
+      "market": "global",
+      "period": "one-year project",
+      "outcome": "unproven",
+      "evidence": "documented",
+      "note": "The consultancy says the supplier tripled its recycling rate and raised recycling effectiveness to 98 percent, with a joint venture with a smaller recycling partner. No baseline or financials given. The site describes this as battery recycling, but the case page reads like a refractory-materials service, so the EV battery link is unclear.",
+      "source_ids": [
+        "s2"
+      ]
+    }
+  ],
+  "parameters": [],
+  "match": {
+    "segments": [
+      "industrial"
+    ],
+    "customer_capex": "none",
+    "needs": {
+      "provider_financing": true,
+      "measurable_savings": false,
+      "installer_network": false,
+      "own_hardware": false,
+      "smart_meter": false
+    },
+    "domains": [
+      "mobility",
+      "flexibility"
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "public",
+      "title": "Seconds Innovation: How a nuclear technology leader entered EV battery recycling",
+      "url": "https://www.seconds-innovation.com/insights/how-a-nuclear-technology-leader-entered-ev-battery-recycling",
+      "accessed": "2026-11-13"
+    },
+    {
+      "id": "s2",
+      "kind": "public",
+      "title": "Seconds Innovation: How a refractory leader tripled its recycling rate",
+      "url": "https://www.seconds-innovation.com/insights/how-a-refractory-leader-tripled-its-recycling-rate",
+      "accessed": "2026-11-13"
+    }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-13",
+  "status": "draft"
+}
