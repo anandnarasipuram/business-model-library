@@ -1,0 +1,162 @@
+{
+  "id": "data-as-a-service-iot-analytics",
+  "name": "Data, information and answers as a service (IoT analytics)",
+  "aliases": [
+    "DaaS",
+    "Information as a Service",
+    "Answers as a Service",
+    "analytics as a service"
+  ],
+  "archetype": "data_platform",
+  "sector": "energy+iot",
+  "summary": "The provider earns money from data produced by connected devices at three levels of processing: raw data (DaaS), derived information (IaaS) or ready answers and recommendations (AaaS). One consultancy article names Schneider Electric's EcoStruxure Asset Advisor as an AaaS example. The same article warns that few companies build a sustainable model on data.",
+  "how_it_makes_money": "Per the source: DaaS is priced per data unit (most common), by subscription or flat rate. IaaS is priced per call or order, or with a free tier tied to registered data. AaaS is priced per answer or by subscription for frequent use, plus consulting or implementation fees. No energy-specific prices were found.",
+  "building_blocks": {
+    "hardware": [
+      "Connected devices or sensors that produce the data"
+    ],
+    "software": [
+      "Data platform",
+      "Analytics or recommendation engine",
+      "Customer interface or API"
+    ],
+    "sites_assets": [
+      "Customer assets that are instrumented (buildings, plants, equipment)"
+    ],
+    "partners": [
+      "Implementation partners (the source advises engaging the right ones early)"
+    ],
+    "regulation": [],
+    "financing": [],
+    "channel": [
+      "Close customer contact (the source names it as a condition for answers-as-a-service)"
+    ],
+    "data": [
+      "High-quality, regularly measured data",
+      "Enough data volume for DaaS",
+      "Incentives for customers to keep sharing when the initial data is limited"
+    ]
+  },
+  "stakeholder_value": {
+    "customer": "Data, information or recommendations they do not produce themselves",
+    "provider": "Recurring or usage-based revenue from data it already has access to",
+    "partner": "Implementation and consulting work (AaaS)",
+    "other": ""
+  },
+  "what_must_be_true": [
+    "Data quality is high and measured regularly",
+    "The customer's problem is confirmed in interviews and an early proof of concept",
+    "The offer fits into the customer's own process",
+    "Willingness to pay is tested early, for example through demo or beta use or letters of intent",
+    "For DaaS: a dominant role in the industry and high data volume",
+    "For AaaS: close customer contact and deep knowledge of the customers"
+  ],
+  "risks_failure_causes": [
+    {
+      "tag": "overestimated_data_value",
+      "text": "Companies often overestimate the value of their data and their ability to earn revenue from it; few reach a sustainable model (observation by a consultancy, no study cited)",
+      "evidence": "documented",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "tag": "poor_data_quality",
+      "text": "Bad data quality and blind trust in data without context. The source's example is a non-energy company that found 70 percent of its logistics data was incorrect",
+      "evidence": "documented",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "tag": "skills_gap",
+      "text": "Shortage of data talent and underestimated skill requirements",
+      "evidence": "documented",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "tag": "cold_start",
+      "text": "With limited initial data, customers must be given reasons to keep sharing",
+      "evidence": "documented",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "tag": "process_misfit",
+      "text": "The solution does not fit the customer's process, or customer needs were never validated",
+      "evidence": "documented",
+      "source_ids": [
+        "s1"
+      ]
+    }
+  ],
+  "evidence": "inferred",
+  "outcome": "unproven",
+  "cases": [
+    {
+      "company": "Schneider Electric: EcoStruxure Asset Advisor",
+      "market": "not stated",
+      "period": "not stated",
+      "outcome": "unproven",
+      "evidence": "documented",
+      "note": "Named in the source as an example of answers-as-a-service. The source gives no revenue, pricing or results.",
+      "source_ids": [
+        "s1"
+      ]
+    },
+    {
+      "company": "Unnamed European industrial manufacturer (building technology)",
+      "market": "global",
+      "period": "offerings as of 2019, 5-month project",
+      "outcome": "unproven",
+      "evidence": "documented",
+      "note": "Digital building offerings: energy consumption monitoring, sustainability reporting, space utilisation, predictive maintenance. Open questions were which solutions clients need, willingness to pay and whether facility managers differ by region. A workable pricing model was reached but not disclosed. The page's results section describes an ag-tech pilot, so treat this case as thin.",
+      "source_ids": [
+        "s2"
+      ]
+    }
+  ],
+  "parameters": [],
+  "match": {
+    "segments": [
+      "mfh",
+      "commercial",
+      "public",
+      "industrial"
+    ],
+    "customer_capex": "none",
+    "needs": {
+      "provider_financing": false,
+      "measurable_savings": false,
+      "installer_network": false,
+      "own_hardware": true,
+      "smart_meter": false
+    },
+    "domains": [
+      "general"
+    ]
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "kind": "public",
+      "title": "Seconds Innovation: The characteristics of data-driven business model development and how to succeed",
+      "url": "https://www.seconds-innovation.com/insights/the-characteristics-of-data-driven-business-model-development-and-how-to-succeed",
+      "accessed": "2026-11-13"
+    },
+    {
+      "id": "s2",
+      "kind": "public",
+      "title": "Seconds Innovation: How a traditional industrial manufacturer unlocked the value of software-based solutions",
+      "url": "https://www.seconds-innovation.com/insights/how-a-traditional-industrial-manufacturer-unlocked-the-value-of-software-based-solutions",
+      "accessed": "2026-11-13"
+    }
+  ],
+  "visibility": "public",
+  "perspective": "product_company",
+  "last_verified": "2026-11-13",
+  "status": "draft"
+}

@@ -72,6 +72,14 @@
       "tag": "overleverage",
       "text": "Funding many rented systems up front can leave the provider overleveraged if customers do not use as much energy as projected",
       "evidence": "inferred"
+    },
+    {
+      "tag": "unit_margin_kpi",
+      "text": "Success measures based on product margin can kill rental or as-a-service projects: such offers earn less margin early but more over a longer lifetime (a consultancy's general view on circular and as-a-service models, not energy-specific)",
+      "evidence": "inferred",
+      "source_ids": [
+        "s4"
+      ]
     }
   ],
   "evidence": "documented",
@@ -140,10 +148,17 @@
       "title": "Sifted via BeBeez: Zolar cuts workforce",
       "url": "https://bebeez.eu/?p=56270",
       "accessed": "2026-11-12"
+    },
+    {
+      "id": "s4",
+      "kind": "public",
+      "title": "Seconds Innovation: Managing the path forward, six insights on business models for the circular economy",
+      "url": "https://www.seconds-innovation.com/insights/managing-the-path-forward-six-insights-on-developing-business-models-for-the-circular-economy",
+      "accessed": "2026-11-13"
     }
   ],
   "visibility": "public",
   "perspective": "product_company",
-  "last_verified": "2026-11-12",
+  "last_verified": "2026-11-13",
   "status": "draft"
 }
